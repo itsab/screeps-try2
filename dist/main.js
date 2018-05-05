@@ -39,9 +39,13 @@ module.exports.loop = function () {
 		    builder.run(creep);
 		}
 		if(creep.memory.role == 'guard')
-		{
-		    guardian.run(creep);
-		}
+        {
+            guardian.run(creep);
+        }
+        if(creep.memory.role == 'upgrader')
+        {
+            upgrader.run(creep);
+        }
 		
 		
 	}

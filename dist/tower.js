@@ -1,6 +1,6 @@
 var tower = {
     run: function(){
-        console.log(Game.structures);
+       // console.log(Game.structures);
     }
 }
 
