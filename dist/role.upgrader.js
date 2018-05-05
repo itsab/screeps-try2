@@ -25,7 +25,7 @@ var roleUpgrader = {
             }*/
 
             var nearSource = creep.room.findClosestByPath(FIND_SOURCES);
-            if(creep.harvest(nearSource == ERR_NOT_IN_RANGE) {
+            if(creep.harvest(nearSource) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(nearSource, {visualizePathStyle: {stroke: '#ffaa00'}});
             }
         }
