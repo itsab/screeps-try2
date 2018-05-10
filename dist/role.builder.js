@@ -12,10 +12,22 @@ var roleBuilder = {
         }
 
         if(creep.memory.building) {
-            var target = creep.pos.findClosestByPath(FIND_MY_CONSTRUCTION_SITES);
-            if(creep.build(target) == ERR_NOT_IN_RANGE) {
-                creep.moveTo(target);
+
+            var repairTargets = creep.room.find(FIND_MY_STRUCTURES, {
+                filter: (structure) => { return structure.hits / structure.hitsMax < 0.5; }
+            });
+            if(repairTargets.length > 0) {
+                var repairTarget = creep.pos.findClosestByPath(repairTargets);
+                if(creep.build(repairTarget) == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(repairTarget);
+                }
+            } else {
+                var target = creep.pos.findClosestByPath(FIND_MY_CONSTRUCTION_SITES);
+                if(creep.build(target) == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(target);
+                }
             }
+
         }
         else {
             //checks if spawn are closer than next source
