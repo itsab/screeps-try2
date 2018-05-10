@@ -16,6 +16,8 @@ var roleDriller = {
         if(containersNearSource.length > 0)
         {
             console.log("if");
+            var _if = creep.harvest(containersNearSource[0].pos.findInRange(FIND_SOURCES,1)) == ERR_NOT_IN_RANGE;
+            console.log(_if);
             if(creep.harvest(containersNearSource[0].pos.findInRange(FIND_SOURCES,1)) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(containersNearSource[0], {visualizePathStyle: {stroke: '#ffcc00'}});
             }
