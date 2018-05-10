@@ -16,11 +16,12 @@ var spawner = {
 
                     //creating new creeps name
                     var newName = key + Game.time;
-                    console.log('Spawning new '+ key+ ': ' + newName);
+
 
                     //spawning new creep with the role already in memory
                     if(Game.spawns['Spawn1'].spawnCreep([WORK,CARRY,MOVE], newName,{memory: {role: key}}) == OK){
                         spawnerObj.toSpawn = false;
+                        console.log('Spawning new '+ key+ ': ' + newName);
                     };
                 }
             }
