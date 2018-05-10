@@ -6,6 +6,7 @@ var spawner = {
         //check if there is a creep already waiting to spawn
         if(spawnerObj.toSpawn == false)
         {
+            console.log("false");
             //loop through all roles
             for(var key in numberCreeps)
             {
