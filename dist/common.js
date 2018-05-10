@@ -37,7 +37,7 @@ var common = {
         for(var i in Memory.containers)
         {
             var container = Game.getObjectById(Memory.containers[i]);
-            if(container.store[RESOURCE_ENERGY] / container.storeCapacity > 0.1)
+            if(container.store[RESOURCE_ENERGY] > 200)
             {
                 if(creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(container, {visualizePathStyle: {stroke: '#ffaa00'}});
