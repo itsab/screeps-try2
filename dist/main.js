@@ -5,13 +5,7 @@ var upgrader = require('role.upgrader');
 var tower = require('tower');
 var common = require('common');
 
-Memory.spawner =   {
-    "toSpawn":false,
-    "numberBuilders": 2,
-    "numberHarvester": 2,
-    "numberUpgrader": 2,
-    "numberGuaridan": 2
-};
+
 
 module.exports.loop = function () {
 
