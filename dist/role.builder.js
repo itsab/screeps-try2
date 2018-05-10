@@ -17,11 +17,9 @@ var roleBuilder = {
 
         }
         else {
-            var target = creep.pos.findClosestByPath(FIND_CONSTRUCTION_SITES);
-            if(target.length) {
-                if(creep.build(target) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(target);
-                }
+            var target = creep.pos.findClosestByPath(FIND_MY_CONSTRUCTION_SITES);
+            if(creep.build(target) == ERR_NOT_IN_RANGE) {
+                creep.moveTo(target);
             }
         }
 	}
