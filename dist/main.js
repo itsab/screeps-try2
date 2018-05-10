@@ -23,6 +23,8 @@ Memory.rooms = {
     "E43S26":{}
 };
 
+
+
 module.exports.loop = function () {
 
     //use spawner
@@ -63,4 +65,7 @@ module.exports.loop = function () {
 
 	//DEBUG AREA
 	//console.log(Game.cpu.bucket);
+
+    //visuals
+    new RoomVisual('E43S27').text("toSpawn: "+Memory.spawner.toSpawn, Game.spawns.Spawn1.pos, {color: 'green', font: 0.8});
 }
