@@ -51,5 +51,5 @@ module.exports.loop = function () {
 
 
 	//DEBUG AREA
-	console.log(Game.cpu.bucket);
+	//console.log(Game.cpu.bucket);
 }
