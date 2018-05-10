@@ -23,6 +23,9 @@ var spawner = {
                     spawnerObj.toSpawn = false;
                     console.log('Spawning new '+ key+ ': ' + newName);
                 };
+
+                //exit spawner loop
+                break;
             }
         }
 
