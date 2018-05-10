@@ -15,7 +15,7 @@ var roleDriller = {
             }});
 
 
-        console.log("containers near sources with no creep on it: "+containersNearSource);
+        //console.log("containers near sources with no creep on it: "+containersNearSource);
         if(containersNearSource.length > 0)
         {
             creep.moveTo(containersNearSource[0], {visualizePathStyle: {stroke: '#ffcc00'}});
