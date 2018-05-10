@@ -12,7 +12,7 @@ var roleHarvester = {
             }*/
 
 	        //pickup dropped energy in range
-            /*var droppedEnergy = creep.pos.findInRange(FIND_DROPPED_RESOURCES, 10, {filter: {resourceType: RESOURCE_ENERGY}});
+            var droppedEnergy = creep.pos.findInRange(FIND_DROPPED_RESOURCES, 10, {filter: {resourceType: RESOURCE_ENERGY}});
 	        if(droppedEnergy.length > 0)
             {
                 if(creep.pickup(droppedEnergy[0]) == ERR_NOT_IN_RANGE) {
@@ -23,8 +23,8 @@ var roleHarvester = {
             var nearSource = creep.pos.findClosestByPath(FIND_SOURCES);
             if(creep.harvest(nearSource) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(nearSource, {visualizePathStyle: {stroke: '#ffaa00'}});
-            }*/
-            common.getEnergyFromContainers(creep);
+            }
+            //common.getEnergyFromContainers(creep);
         }
         else {
             var targets = creep.room.find(FIND_STRUCTURES, {

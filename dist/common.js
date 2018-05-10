@@ -10,13 +10,13 @@ var common = {
     },
 
     getEnergyFromContainers: function (creep) {
-        /*var droppedEnergy = creep.pos.findInRange(FIND_DROPPED_RESOURCES, 10, {filter: {resourceType: RESOURCE_ENERGY}});
+        var droppedEnergy = creep.pos.findInRange(FIND_DROPPED_RESOURCES, 10, {filter: {resourceType: RESOURCE_ENERGY}});
         if(droppedEnergy.length > 0)
         {
             if(creep.pickup(droppedEnergy[0]) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(droppedEnergy[0], {visualizePathStyle: {stroke: '#ffaa00'}});
             }
-        } else
+        } /*else
             var containers = creep.room.find(FIND_STRUCTURES, {
                 filter: (structure) => {
                     return structure.structureType == STRUCTURE_CONTAINER &&
@@ -32,8 +32,8 @@ var common = {
                 }
             }
 
-        }        {*/
-
+        }
+        */
         for(var i in Memory.containers)
         {
             var container = Game.getObjectById(Memory.containers[i]);
