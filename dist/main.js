@@ -2,6 +2,7 @@ var harvester = require('role.harvester');
 var builder = require('role.builder');
 var guardian = require('role.guardian');
 var upgrader = require('role.upgrader');
+var driller = require('role.driller');
 var tower = require('tower');
 var spawner = require('spawner');
 var common = require('common');
