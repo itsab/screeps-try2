@@ -10,7 +10,7 @@ var roleHarvester = {
             }*/
 
 	        //pickup dropped energy in range
-            var droppedEnergy = creep.pos.findInRange(FIND_DROPPED_ENERGY, 10);
+            var droppedEnergy = creep.pos.findInRange(FIND_DROPPED_RESOURCES, 10, {filter: {resourceType: RESOURCE_ENERGY}});
 	        if(droppedEnergy.length > 0)
             {
                 if(creep.pickup(droppedEnergy[0]) == ERR_NOT_IN_RANGE) {
