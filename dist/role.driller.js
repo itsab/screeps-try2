@@ -8,7 +8,7 @@ var roleDriller = {
             filter: (structure) => {
                 return (structure.structureType == STRUCTURE_CONTAINER) &&
                     structure.pos.findInRange(FIND_SOURCES,1).length > 0 &&
-                    structure.pos.lookFor(FIND_CREEPS).length > 0
+                    !(structure.pos.lookFor(FIND_CREEPS).length > 0)
             }});
 
 
