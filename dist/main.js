@@ -24,7 +24,7 @@ Memory.rooms = {
     "E43S26":{}
 };
 
-
+Memory.containers = [Game.getObjectById("5af4760c216b0559d3a13b15")];
 
 module.exports.loop = function () {
 

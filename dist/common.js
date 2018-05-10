@@ -17,7 +17,6 @@ var common = {
                 creep.moveTo(droppedEnergy[0], {visualizePathStyle: {stroke: '#ffaa00'}});
             }
         } else
-        {*/
             var containers = creep.room.find(FIND_STRUCTURES, {
                 filter: (structure) => {
                     return structure.structureType == STRUCTURE_CONTAINER &&
@@ -33,7 +32,12 @@ var common = {
                 }
             }
 
-        //}
+        }        {*/
+
+        for(var i in Memory.containers)
+        {
+            console.log(i);
+        }
 
         var nearSource = creep.pos.findClosestByPath(FIND_SOURCES);
         if(creep.harvest(nearSource) == ERR_NOT_IN_RANGE) {
