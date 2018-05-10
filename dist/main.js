@@ -48,7 +48,7 @@ module.exports.loop = function () {
         {
         	if(countUpgrader < 1)
 			{
-                upgrader.run(creep, "E43S26");
+                //upgrader.run(creep, "E43S26");
                 countUpgrader++;
 			}
             upgrader.run(creep, "E43S27");
