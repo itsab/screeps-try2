@@ -4,7 +4,7 @@ var guardian = require('role.guardian');
 var upgrader = require('role.upgrader');
 var tower = require('tower');
 
-Game.memory.spawner =   {
+Game.memory["spawner"] =   {
     "toSpawn":false,
     "numberBuilders": 2,
     "numberHarvester": 2,
