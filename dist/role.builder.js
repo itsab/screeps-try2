@@ -2,7 +2,7 @@ var common = require('common');
 
 var roleBuilder = {
 	run: function(creep) {
-        if(creep.carry.energy == 0) {
+        if(creep.carry.energy < creep.carryCapacity) {
 
             //check if the nearest source is closer than spawn or toSpawn is true
             if(creep.pos.getRangeTo(creep.pos.findClosestByPath(FIND_SOURCES)) < creep.pos.getRangeTo(creep.pos.findClosestByPath(FIND_MY_SPAWNS)) || Memory.spawner.toSpawn == true)
