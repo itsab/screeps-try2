@@ -18,12 +18,18 @@ Memory.spawner =   {
 		driller:[MOVE,MOVE,WORK,WORK]}
 };
 
+Memory.rooms = {
+	"E43S27":{},
+    "E43S26":{}
+};
+
 module.exports.loop = function () {
 
     //use spawner
     spawner.run();
 
     //use creeps
+	var countUpgrader = 0;
 	for(var name in Game.creeps) {
 		var creep = Game.creeps[name];
 		if(creep.memory.role == 'harvester')
@@ -40,7 +46,12 @@ module.exports.loop = function () {
         }
         if(creep.memory.role == 'upgrader')
         {
-            upgrader.run(creep);
+        	if(countUpgrader < 1)
+			{
+                upgrader.run(creep, "E43S26");
+                countUpgrader++;
+			}
+            upgrader.run(creep, "E43S27");
         }
 		
 		
