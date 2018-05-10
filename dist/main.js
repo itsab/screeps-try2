@@ -8,10 +8,6 @@ var common = require('common');
 
 Memory.spawner =   {
     "toSpawn":false,
-    "numberHarvester": 4,
-    "numberBuilders": 2,
-    "numberUpgrader": 2,
-    "numberGuaridan": 2,
     "numberCreeps": {harvester:4,builder:2,upgrader:2,guardian:2}
 };
 

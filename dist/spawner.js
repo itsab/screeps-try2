@@ -12,6 +12,7 @@ var spawner = {
                 var numberOfAliveCreeps = _.filter(Game.creeps, (creep) => {return (creep.memory.role == key)});
                 if(numberOfAliveCreeps < numberCreeps[key])
                 {
+                    console.log(numberOfAliveCreeps + "<" + numberCreeps[key]);
                     spawnerObj.toSpawn = true;
 
                     //creating new creeps name
