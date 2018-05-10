@@ -25,6 +25,8 @@ var spawner = {
                     };
                 }
             }
+        } else {
+
         }
         Memory.spawner = spawnerObj;
     }

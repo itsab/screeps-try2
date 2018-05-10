@@ -8,11 +8,11 @@ var common = require('common');
 
 Memory.spawner =   {
     "toSpawn":false,
-    "numberBuilders": 2,
     "numberHarvester": 4,
+    "numberBuilders": 2,
     "numberUpgrader": 2,
     "numberGuaridan": 2,
-    "numberCreeps": {harvester:2,builder:2,upgrader:2,guardian:2}
+    "numberCreeps": {harvester:4,builder:2,upgrader:2,guardian:2}
 };
 
 module.exports.loop = function () {
