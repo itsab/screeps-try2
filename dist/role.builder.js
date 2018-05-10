@@ -1,9 +1,9 @@
+var common = require("common");
+
 var roleBuilder = {
 	run: function(creep) {
         if(creep.carry.energy == 0) {
-            if(creep.withdraw(Game.spawns.Spawn1, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                creep.moveTo(Game.spawns.Spawn1);
-            }
+            common.getEnergyFromSpawn(creep);
         }
         else {
             var targets = creep.room.find(FIND_CONSTRUCTION_SITES);

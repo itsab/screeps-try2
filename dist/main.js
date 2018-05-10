@@ -3,6 +3,7 @@ var builder = require('role.builder');
 var guardian = require('role.guardian');
 var upgrader = require('role.upgrader');
 var tower = require('tower');
+var common = require('common');
 
 Memory.spawner =   {
     "toSpawn":false,
