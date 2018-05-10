@@ -13,7 +13,7 @@ var roleUpgrader = {
         }
 
         console.log(roomName);
-        console.log(Game.rooms[roomName]);
+        console.log(Game.rooms);
         if(creep.memory.upgrading) {
             if(creep.upgradeController(Game.rooms[roomName].controller) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(Game.rooms[roomName].controller, {visualizePathStyle: {stroke: '#ffffff'}});
