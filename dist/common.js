@@ -24,6 +24,8 @@ var common = {
                         structure.energy / structure.energyCapacity > 0.1;
                 }
             });
+            console.log(containers);
+
             if(containers.length > 0)
             {
                 if(creep.withdraw(containers[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
