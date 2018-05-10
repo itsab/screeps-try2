@@ -4,11 +4,15 @@ var guardian = require('role.guardian');
 var upgrader = require('role.upgrader');
 var tower = require('tower');
 
+Game.memory.spawner =   {
+    "toSpawn":false,
+    "numberBuilders": 2,
+    "numberHarvester": 2,
+    "numberUpgrader": 2,
+    "numberGuaridan": 2
+};
+
 module.exports.loop = function () {
-
-
-
-
 
     //spawn harvesters
     var harvesters = _.filter(Game.creeps, (creep) => {return (creep.memory.role == "harvester")});
