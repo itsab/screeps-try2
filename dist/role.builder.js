@@ -19,19 +19,18 @@ var roleBuilder = {
         }
         else {
             //checks if sources are closer than spawn
-            var sourceCloserthanSpawn = creep.pos.getRangeTo(creep.pos.findClosestByPath(FIND_SOURCES)) < creep.pos.getRangeTo(creep.pos.findClosestByPath(FIND_MY_SPAWNS));
+            var spawnCloserThanSource = creep.pos.getRangeTo(creep.pos.findClosestByPath(FIND_SOURCES)) > creep.pos.getRangeTo(creep.pos.findClosestByPath(FIND_MY_SPAWNS));
             //forces builders to take spawn energy if spawn is full
             var Spawn1full = Game.spawns["Spawn1"].energyCapacity == Game.spawns["Spawn1"].energy;
             //force builders get sources when spawn1 is empty
             var Spawn1empty = Game.spawns["Spawn1"].energy > 0;
-            if( (sourceCloserthanSpawn || Memory.spawner.toSpawn == true) && (!Spawn1full || Spawn1empty))
-            {
+            if((Spawn1full || (!Spawn1empty && spawnCloserThanSource)) && Memory.spawner.toSpawn == false){
+                common.getEnergyFromSpawn(creep);
+            } else {
                 var nearSource = creep.pos.findClosestByPath(FIND_SOURCES);
                 if(creep.harvest(nearSource) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(nearSource, {visualizePathStyle: {stroke: '#ffaa00'}});
                 }
-            } else {
-                common.getEnergyFromSpawn(creep);
             }
         }
 
