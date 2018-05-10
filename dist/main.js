@@ -8,7 +8,7 @@ var common = require('common');
 
 Memory.spawner =   {
     "toSpawn":false,
-    "numberCreeps": {harvester:4,driller:0,builder:2,upgrader:2,hauler:0,guardian:2},
+    "numberCreeps": {harvester:4,driller:0,builder:2,upgrader:2,hauler:0,guardian:1},
 	"creepBodys": {
     	harvester:[MOVE,MOVE,CARRY,CARRY,WORK],
 		builder:[MOVE,MOVE,CARRY,CARRY,WORK],
