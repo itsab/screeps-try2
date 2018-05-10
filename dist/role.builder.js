@@ -1,8 +1,7 @@
-
+var common = require('common');
 
 var roleBuilder = {
 	run: function(creep) {
-        var common = require('common');
         if(creep.carry.energy == 0) {
             common.getEnergyFromSpawn(creep);
         }
