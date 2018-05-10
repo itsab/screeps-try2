@@ -9,7 +9,7 @@ var common = {
         }
     },
 
-    collectEnergyFromContainers: function (creep) {
+    getEnergyFromContainers: function (creep) {
         var droppedEnergy = creep.pos.findInRange(FIND_DROPPED_RESOURCES, 10, {filter: {resourceType: RESOURCE_ENERGY}});
         if(droppedEnergy.length > 0)
         {

@@ -1,3 +1,5 @@
+var common = require('common');
+
 var roleUpgrader = {
 
     /** @param {Creep} creep **/
@@ -24,10 +26,11 @@ var roleUpgrader = {
                 creep.moveTo(sources[0], {visualizePathStyle: {stroke: '#ffaa00'}});
             }*/
 
-            var nearSource = creep.pos.findClosestByPath(FIND_SOURCES);
+            /*var nearSource = creep.pos.findClosestByPath(FIND_SOURCES);
             if(creep.harvest(nearSource) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(nearSource, {visualizePathStyle: {stroke: '#ffaa00'}});
-            }
+            }*/
+            common.getEnergyFromContainers(creep);
         }
 	}
 };
