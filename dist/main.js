@@ -48,4 +48,8 @@ module.exports.loop = function () {
 	
 	//use towers
 	tower.run();
+
+
+	//DEBUG AREA
+	console.log(Game.cpu.bucket);
 }

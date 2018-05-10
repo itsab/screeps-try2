@@ -12,9 +12,9 @@ var roleBuilder = {
                     creep.moveTo(nearSource, {visualizePathStyle: {stroke: '#ffaa00'}});
                 }
             } else {
-
+                common.getEnergyFromSpawn(creep);
             }
-            common.getEnergyFromSpawn(creep);
+
         }
         else {
             var targets = creep.room.find(FIND_CONSTRUCTION_SITES);
