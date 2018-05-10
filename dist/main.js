@@ -46,6 +46,10 @@ module.exports.loop = function () {
         {
             guardian.run(creep);
         }
+        if(creep.memory.role == 'driller')
+        {
+            driller.run(creep);
+        }
         if(creep.memory.role == 'upgrader')
         {
         	if(countUpgrader < 1)
