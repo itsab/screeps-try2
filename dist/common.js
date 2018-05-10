@@ -21,7 +21,7 @@ var common = {
             var containers = creep.room.find(FIND_STRUCTURES, {
                 filter: (structure) => {
                     return structure.structureType == STRUCTURE_CONTAINER &&
-                        ((structure.store[RESOURCE_ENERGY] / structure.storeCapacity) > 0.1);
+                        structure.store[RESOURCE_ENERGY] > 0;
                 }
             });
             console.log(containers);
