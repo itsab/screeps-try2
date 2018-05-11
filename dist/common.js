@@ -22,7 +22,7 @@ var common = {
             if(containers.length > 0) {
                 var container = creep.pos.findClosestByPath(containers, {
                     filter: (structure) => {
-                        return structure.store[RESOURCE_ENERGY] > 300;
+                        return structure.store[RESOURCE_ENERGY] > 500;
                     }
                 });
             }
