@@ -26,13 +26,6 @@ var spawner = {
         //loop through all roles
         for(var key in numberCreeps)
         {
-            //DEBUG START
-            //combine new creep body
-            var basicBody = spawnerObj.creepBodys[key];
-            var extendedBody = extendBody(basicBody);
-            console.log("basic: "+basicBody);
-            console.log("extended: "+extendedBody);
-            //DEBUG END
 
             var numberOfAliveCreeps = _.filter(Game.creeps, (creep) => {return (creep.memory.role == key)});
             if(numberOfAliveCreeps.length < numberCreeps[key])
@@ -51,7 +44,7 @@ var spawner = {
                 console.log("extended"+extendedBody);
 
                 //spawning new creep with the role already in memory
-                if(Game.spawns['Spawn1'].spawnCreep(spawnerObj.creepBodys[key], newName,{memory: {role: key}}) == OK){
+                if(Game.spawns['Spawn1'].spawnCreep(extendedBody, newName,{memory: {role: key}}) == OK){
                     spawnerObj.toSpawn = false;
                     console.log('Spawning new '+ key+ ': ' + newName);
                 };
