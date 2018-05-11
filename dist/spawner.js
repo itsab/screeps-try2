@@ -32,7 +32,10 @@ var spawner = {
         {
 
             var numberOfAliveCreeps = _.filter(Game.creeps, (creep) => {return (creep.memory.role == key)});
-            console.log(numberOfAliveCreeps);
+            if(numberOfAliveCreeps == undefined)
+            {
+                numberOfAliveCreeps = 0;
+            }
 
             if(numberOfAliveCreeps.length < creepsT[key])
             {
