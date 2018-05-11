@@ -32,6 +32,10 @@ module.exports.loop = function () {
 	if(Game.spawns.Spawn1.room.find(FIND_HOSTILE_CREEPS).length > 0)
 	{
 		Memory.underAttack++;
+		if(Memory.underAttack > 100) {
+			console.log("ALERT: WOULD ACTIVATE SAFEMODE NOW");
+			//Game.spawns.Spawn1.room.controller.activateSafeMode();
+		}
     } else {
 		Memory.underAttack = 0;
 	}
