@@ -4,7 +4,7 @@ var spawner = {
         var extendBody = function(currentBody) {
             var extendedBody = [];
             var baseCapacity = 300;
-            var availableEnergy = Game.spawns.Spawn1.room.energyAvailable;
+            var availableEnergy = Game.spawns.Spawn1.room.energyCapacityAvailable;
             var k = parseInt(availableEnergy / baseCapacity);
             console.log("k: "+k);
             for(var i = 0; i<k; i++)
