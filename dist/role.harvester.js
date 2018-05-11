@@ -27,7 +27,7 @@ var roleHarvester = {
             //common.getEnergyFromContainers(creep);
         }
         else {
-            var target = creep.room.findClosestByPath(FIND_STRUCTURES, {
+            var target = creep.pos.findClosestByPath(FIND_STRUCTURES, {
                     filter: (structure) => {
                         return (structure.structureType == STRUCTURE_EXTENSION || structure.structureType == STRUCTURE_SPAWN || structure.structureType == STRUCTURE_TOWER) &&
                             structure.energy < structure.energyCapacity;
