@@ -15,7 +15,7 @@ Memory.spawner =   {
 		builder:[MOVE,MOVE,CARRY,CARRY,WORK],
 		upgrader:[MOVE,MOVE,CARRY,CARRY,WORK],
 		guardian:[MOVE,MOVE,ATTACK,ATTACK],
-		hauler:[MOVE,MOVE,CARRY,CARRY,CARRY,CARRY],
+		hauler:[MOVE,MOVE,MOVE,CARRY,CARRY,CARRY],
 		driller:[MOVE,MOVE,WORK,WORK]}
 };
 

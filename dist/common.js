@@ -16,24 +16,25 @@ var common = {
             if(creep.pickup(droppedEnergy[0]) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(droppedEnergy[0], {visualizePathStyle: {stroke: '#ffaa00'}});
             }
-        } /*else
-            var containers = creep.room.find(FIND_STRUCTURES, {
+        } else
+            var containers = Memory.containers.map(Game.getObjectById);
+
+            var container = creep.room.findClosestByPath(containers, {
                 filter: (structure) => {
-                    return structure.structureType == STRUCTURE_CONTAINER &&
-                        structure.store[RESOURCE_ENERGY] > 0;
+                    return structure.store[RESOURCE_ENERGY] > 300;
                 }
             });
-            console.log(containers);
+            console.log(container);
 
             if(containers.length > 0)
             {
-                if(creep.withdraw(containers[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(containers[0], {visualizePathStyle: {stroke: '#ffaa00'}});
+                if(creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(container, {visualizePathStyle: {stroke: '#ffaa00'}});
                 }
             }
 
-        }
-        */
+
+        /*
         for(var i in Memory.containers)
         {
             var container = Game.getObjectById(Memory.containers[i]);
@@ -44,7 +45,7 @@ var common = {
                 }
             }
 
-        }
+        }*/
 
         var nearSource = creep.pos.findClosestByPath(FIND_SOURCES);
         if(creep.harvest(nearSource) == ERR_NOT_IN_RANGE) {
