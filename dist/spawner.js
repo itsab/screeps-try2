@@ -21,7 +21,11 @@ var spawner = {
         var spawnerObj = Memory.spawner;
         var numberCreeps = spawnerObj.numberCreeps;
 
-        //check if there is a creep already waiting to spawn
+        //check if there is a creep already spawning
+        if(Game.spawns.Spawn1.spawning != null)
+        {
+            return;
+        }
 
         //loop through all roles
         for(var key in numberCreeps)
