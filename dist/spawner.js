@@ -6,7 +6,7 @@ var spawner = {
             var baseCapacity = 300;
             var availableEnergy = Game.spawns.Spawn1.room.energyCapacityAvailable;
             var k = parseInt(availableEnergy / baseCapacity);
-            console.log("k: "+k);
+
             for(var i = 0; i<k; i++)
             {
                 extendedBody = extendedBody.concat(currentBody);
@@ -40,13 +40,11 @@ var spawner = {
                 var basicBody = spawnerObj.creepBodys[key];
                 var extendedBody = extendBody(basicBody);
 
-                console.log("basic"+basicBody);
-                console.log("extended"+extendedBody);
-
                 //spawning new creep with the role already in memory
                 if(Game.spawns['Spawn1'].spawnCreep(extendedBody, newName,{memory: {role: key}}) == OK){
                     spawnerObj.toSpawn = false;
                     console.log('Spawning new '+ key+ ': ' + newName);
+                    console.log('Body: '+extendedBody);
                 };
 
                 //exit spawner loop
