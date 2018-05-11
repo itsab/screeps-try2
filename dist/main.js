@@ -65,7 +65,7 @@ module.exports.loop = function () {
 	}
 	
 	//use towers
-	tower.run();
+	//tower.run();
 
 	//run every10ticks
 	every10ticks();
