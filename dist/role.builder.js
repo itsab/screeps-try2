@@ -50,15 +50,15 @@ var roleBuilder = {
                 //forces builders to take spawn energy if spawn is full
                 var Spawn1full = Game.spawns["Spawn1"].energyCapacity == Game.spawns["Spawn1"].energy;
                 //force builders get sources when spawn1 is empty
-                var Spawn1empty = Game.spawns["Spawn1"].energy > 0;
-                if((Spawn1full || (!Spawn1empty && spawnCloserThanSource)) && Memory.spawner.toSpawn == false){
-                    common.getEnergyFromSpawn(creep);
-                } else {
+                //var Spawn1empty = Game.spawns["Spawn1"].energy > 0;
+                //if((Spawn1full || (!Spawn1empty && spawnCloserThanSource)) && Memory.spawner.toSpawn == false){
+                    //common.getEnergyFromSpawn(creep);
+                //} else {
                     var nearSource = creep.pos.findClosestByPath(FIND_SOURCES);
                     if(creep.harvest(nearSource) == ERR_NOT_IN_RANGE) {
                         creep.moveTo(nearSource, {visualizePathStyle: {stroke: '#ffaa00'}});
                     }
-                }
+                // }
 
             }
         }
