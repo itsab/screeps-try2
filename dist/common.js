@@ -17,6 +17,7 @@ var common = {
                 creep.moveTo(droppedEnergy[0], {visualizePathStyle: {stroke: '#ffaa00'}});
             }
         } else
+        {
             var containers = Memory.containers.map(Game.getObjectById);
             console.log(containers);
             if(containers.length > 0) {
@@ -35,7 +36,15 @@ var common = {
                 if(creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(container, {visualizePathStyle: {stroke: '#ffaa00'}});
                 }
+            } else {
+                var nearSource = creep.pos.findClosestByPath(FIND_SOURCES);
+                if(creep.harvest(nearSource) == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(nearSource, {visualizePathStyle: {stroke: '#ffaa00'}});
+                }
             }
+
+        }
+
 
 
         /*
@@ -51,10 +60,7 @@ var common = {
 
         }*/
 
-        var nearSource = creep.pos.findClosestByPath(FIND_SOURCES);
-        if(creep.harvest(nearSource) == ERR_NOT_IN_RANGE) {
-            creep.moveTo(nearSource, {visualizePathStyle: {stroke: '#ffaa00'}});
-        }
+
     }
 }
 
