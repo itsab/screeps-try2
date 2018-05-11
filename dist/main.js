@@ -78,7 +78,7 @@ module.exports.loop = function () {
         {
 			for(var roomName in Memory.rooms)
 			{
-				claimer.run(creep,roomName);
+				claimer.run(creep,"E43S26");
 			}
 
         }
