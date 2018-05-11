@@ -3,8 +3,6 @@ var roleClaimer = {
     /** @param {Creep} creep **/
     run: function(creep, roomName) {
 
-        var room = Game.rooms[roomName];
-
         if(creep.room.name != roomName)
         {
             const route = Game.map.findRoute(creep.room, roomName);
