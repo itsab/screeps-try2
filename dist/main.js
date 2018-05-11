@@ -67,10 +67,23 @@ module.exports.loop = function () {
 	//use towers
 	tower.run();
 
+	//run every10ticks
+	every10ticks();
+
 
 	//DEBUG AREA
 	//console.log(Game.cpu.bucket);
 
     //visuals
     new RoomVisual('E43S27').text("toSpawn: "+Memory.spawner.toSpawn, Game.spawns.Spawn1.pos, {color: 'green', font: 0.8});
+}
+
+var every10ticks = function() {
+    var towers = Game.spawns.Spawn1.room.find(FIND_STRUCTURES, {filter:{structureType: STRUCTURE_TOWER}}).map(function(element){return element.id});
+    console.log("towers: "+towers);
+    //Memory.towers = towers;
+
+	var containers = Game.spawns.Spawn1.room.find(FIND_STRUCTURES, {filter:{structureType: STRUCTURE_CONTAINER}}).map(function(element){return element.id});
+	console.log("containers: "+containers);
+	//Memory.containers = containers;
 }
