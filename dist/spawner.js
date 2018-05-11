@@ -35,7 +35,7 @@ var spawner = {
 
             if(numberOfAliveCreeps < creepsT[key])
             {
-                console.log(numberOfAliveCreeps.length + "<" + creepsT[key] + " - not enough "+ key + "s");
+                console.log(numberOfAliveCreeps + "<" + creepsT[key] + " - not enough "+ key + "s");
                 spawnerObj.toSpawn = true;
 
                 //creating new creeps name
