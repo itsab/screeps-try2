@@ -17,7 +17,7 @@ Memory.spawner =   {
         hauler: { body:[MOVE,MOVE,MOVE,CARRY,CARRY,CARRY], buildCount: 0, priority:1 },
         upgrader: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 3, priority:1 },
         guardian: { body:[MOVE,MOVE,ATTACK,ATTACK], buildCount: 1, priority:1 },
-		claimer: { body:[MOVE,MOVE,CLAIM], buildCount: 1, priority:1 }
+		claimer: { body:[MOVE,MOVE,CLAIM], buildCount: 0, priority:1 }
     }
 };
 

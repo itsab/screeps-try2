@@ -2,6 +2,17 @@ var common = require('common');
 
 var roleBuilder = {
 	run: function(creep) {
+
+        if(creep.pos.roomName != creep.memory.roomName && creep.memory.roomName != undefined)
+        {
+            const route = Game.map.findRoute(creep.room, creep.memory.roomName);
+            if(route.length > 0) {
+                creep.say(route[0].room);
+                const exit = creep.pos.findClosestByRange(route[0].exit);
+                creep.moveTo(exit,{visualizePathStyle: {stroke: '#ffffff'}});
+            }
+        }
+
         if(creep.memory.building && creep.carry.energy == 0) {
             creep.memory.building = false;
             creep.say('collecting');

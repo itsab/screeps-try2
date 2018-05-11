@@ -5,6 +5,16 @@ var roleUpgrader = {
     /** @param {Creep} creep **/
     run: function(creep, roomName) {
 
+        if(creep.pos.roomName != creep.memory.roomName && creep.memory.roomName != undefined)
+        {
+            const route = Game.map.findRoute(creep.room, creep.memory.roomName);
+            if(route.length > 0) {
+                creep.say(route[0].room);
+                const exit = creep.pos.findClosestByRange(route[0].exit);
+                creep.moveTo(exit,{visualizePathStyle: {stroke: '#ffffff'}});
+            }
+        }
+
         if(creep.memory.upgrading && creep.carry.energy == 0) {
             creep.memory.upgrading = false;
             creep.say('collecting');
