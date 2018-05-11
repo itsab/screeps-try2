@@ -30,6 +30,10 @@ var roleBuilder = {
 
         }
         else {
+            //collect energy
+            common.getEnergyFromContainers(creep);
+            /*
+
             //checks if spawn are closer than next source
             var spawnCloserThanSource = creep.pos.getRangeTo(creep.pos.findClosestByPath(FIND_SOURCES)) > creep.pos.getRangeTo(creep.pos.findClosestByPath(FIND_MY_SPAWNS));
             //forces builders to take spawn energy if spawn is full
@@ -44,6 +48,7 @@ var roleBuilder = {
                     creep.moveTo(nearSource, {visualizePathStyle: {stroke: '#ffaa00'}});
                 }
             }
+            */
         }
     }
 };
