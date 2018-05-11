@@ -26,6 +26,12 @@ var spawner = {
         //loop through all roles
         for(var key in numberCreeps)
         {
+            //DEBUG START
+            //combine new creep body
+            var basicBody = spawnerObj.creepBodys[key];
+            var extendedBody = extendBody(basicBody);
+            //DEBUG END
+
             var numberOfAliveCreeps = _.filter(Game.creeps, (creep) => {return (creep.memory.role == key)});
             if(numberOfAliveCreeps.length < numberCreeps[key])
             {
