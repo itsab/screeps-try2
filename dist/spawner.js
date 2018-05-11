@@ -31,13 +31,9 @@ var spawner = {
         for(var key in creepsT)
         {
 
-            var numberOfAliveCreeps = _.filter(Game.creeps, (creep) => {return (creep.memory.role == key)});
-            if(numberOfAliveCreeps == undefined)
-            {
-                numberOfAliveCreeps = 0;
-            }
+            var numberOfAliveCreeps = _.filter(Game.creeps, (creep) => {return (creep.memory.role == key)}).length;
 
-            if(numberOfAliveCreeps.length < creepsT[key])
+            if(numberOfAliveCreeps < creepsT[key])
             {
                 console.log(numberOfAliveCreeps.length + "<" + creepsT[key] + " - not enough "+ key + "s");
                 spawnerObj.toSpawn = true;
