@@ -18,12 +18,14 @@ var common = {
             }
         } else
             var containers = Memory.containers.map(Game.getObjectById);
+            if(containers.length > 0) {
+                var container = creep.pos.findClosestByPath(containers, {
+                    filter: (structure) => {
+                        return structure.store[RESOURCE_ENERGY] > 300;
+                    }
+                });
+            }
 
-            var container = creep.pos.findClosestByPath(containers, {
-                filter: (structure) => {
-                    return structure.store[RESOURCE_ENERGY] > 300;
-                }
-            });
             //console.log(container);
 
             if(container)
