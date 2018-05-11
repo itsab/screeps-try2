@@ -24,7 +24,7 @@ var common = {
                     return structure.store[RESOURCE_ENERGY] > 300;
                 }
             });
-            console.log(container);
+            //console.log(container);
 
             if(container)
             {
