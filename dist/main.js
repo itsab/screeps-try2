@@ -68,7 +68,11 @@ module.exports.loop = function () {
 	//tower.run();
 
 	//run every10ticks
-	every10ticks();
+	if(Game.time % 10 == 0)
+	{
+        every10ticks();
+	}
+
 
 
 	//DEBUG AREA
