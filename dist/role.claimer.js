@@ -5,16 +5,21 @@ var roleClaimer = {
 
         var room = Game.rooms[roomName];
 
-        if(creep.room != room)
+        if(creep.room.name != roomName)
         {
-            creep.moveTo(room,{visualizePathStyle: {stroke: '#ffffff'});
+            const route = Game.map.findRoute(creep.room, anotherRoomName);
+            if(route.length > 0) {
+                console.log('Now heading to room '+route[0].room);
+                const exit = creep.pos.findClosestByRange(route[0].exit);
+                creep.moveTo(exit,{visualizePathStyle: {stroke: '#ffffff'}});
+            }
+        } else {
+            if(creep.claimController(room.controller) == ERR_NOT_IN_RANGE) {
+                creep.moveTo(room.controller, {visualizePathStyle: {stroke: '#ffffff'}});
+            }
         }
-        if(creep.claimController(room.controller) == ERR_NOT_IN_RANGE) {
-            creep.moveTo(room.controller, {visualizePathStyle: {stroke: '#ffffff'}});
-        }
-    }
-    }
 
+    }
 };
 
 module.exports = roleClaimer;

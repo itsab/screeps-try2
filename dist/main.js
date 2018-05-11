@@ -5,18 +5,11 @@ var upgrader = require('role.upgrader');
 var driller = require('role.driller');
 var tower = require('tower');
 var spawner = require('spawner');
+var claimer = require('role.claimer');
 var common = require('common');
 
 Memory.spawner =   {
     toSpawn:false,
-    numberCreeps: {harvester:4,driller:2,builder:3,upgrader:3,hauler:0,guardian:1},
-	creepBodys: {
-    	harvester:[MOVE,MOVE,CARRY,CARRY,WORK],
-		builder:[MOVE,MOVE,CARRY,CARRY,WORK],
-		upgrader:[MOVE,MOVE,CARRY,CARRY,WORK],
-		guardian:[MOVE,MOVE,ATTACK,ATTACK],
-		hauler:[MOVE,MOVE,MOVE,CARRY,CARRY,CARRY],
-		driller:[MOVE,MOVE,WORK,WORK]},
 	creepsT: {
         harvester: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 4, priority:1 },
         driller: { body:[MOVE,MOVE,WORK,WORK], buildCount: 2, priority:1 },
@@ -24,7 +17,7 @@ Memory.spawner =   {
         hauler: { body:[MOVE,MOVE,MOVE,CARRY,CARRY,CARRY], buildCount: 0, priority:1 },
         upgrader: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 3, priority:1 },
         guardian: { body:[MOVE,MOVE,ATTACK,ATTACK], buildCount: 1, priority:1 },
-		claimer: { body:[MOVE,MOVE,CLAIM], buildCount: 0, priority:1 }
+		claimer: { body:[MOVE,MOVE,CLAIM], buildCount: 1, priority:1 }
     }
 };
 
@@ -81,7 +74,18 @@ module.exports.loop = function () {
 			}
             upgrader.run(creep, "E43S27");
         }
-		
+        if(creep.memory.role == 'claimer')
+        {
+			for(var roomName in Memory.rooms)
+			{
+				var room = Game.rooms[roomName];
+				if(room == undefined)
+				{
+                    claimer.run(creep,roomName);
+				}
+			}
+
+        }
 		
 	}
 	
