@@ -14,8 +14,9 @@ var roleBuilder = {
         if(creep.memory.building) {
 
             var repairTargets = creep.room.find(FIND_STRUCTURES, {
-                filter: (structure) => { var calc = structure.hits / structure.hitsMax; console.log(calc); return calc < 0.5; }
+                filter: (structure) => { var calc = structure.hits / structure.hitsMax; return calc < 0.5; }
             });
+            console.log(repairTargets);
             if(repairTargets.length > 0) {
                 var repairTarget = creep.pos.findClosestByPath(repairTargets);
                 if(creep.build(repairTarget) == ERR_NOT_IN_RANGE) {
