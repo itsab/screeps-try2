@@ -9,7 +9,7 @@ var common = require('common');
 
 Memory.spawner =   {
     "toSpawn":false,
-    "numberCreeps": {harvester:4,driller:1,builder:3,upgrader:3,hauler:0,guardian:1},
+    "numberCreeps": {harvester:4,driller:2,builder:3,upgrader:3,hauler:0,guardian:1},
 	"creepBodys": {
     	harvester:[MOVE,MOVE,CARRY,CARRY,WORK],
 		builder:[MOVE,MOVE,CARRY,CARRY,WORK],
@@ -24,7 +24,7 @@ Memory.rooms = {
     "E43S26":{}
 };
 
-Memory.containers = ["5af4760c216b0559d3a13b15"];
+Memory.containers = ["5af4760c216b0559d3a13b15","5af4a6b43d614859f1ed8175"];
 
 module.exports.loop = function () {
 
