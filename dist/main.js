@@ -84,7 +84,14 @@ module.exports.loop = function () {
         }
 		
 	}
-	
+
+	//clear dead creeps from memory
+    for(var i in Memory.creeps) {
+        if(!Game.creeps[i]) {
+            delete Memory.creeps[i];
+        }
+    }
+
 	//use towers
 	tower.run();
 
