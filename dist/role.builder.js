@@ -19,7 +19,7 @@ var roleBuilder = {
             console.log(repairTargets);
             if(repairTargets.length > 0) {
                 var repairTarget = creep.pos.findClosestByPath(repairTargets);
-                if(creep.build(repairTarget) == ERR_NOT_IN_RANGE) {
+                if(creep.repair(repairTarget) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(repairTarget);
                 }
             } else {
