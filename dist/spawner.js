@@ -9,7 +9,7 @@ var spawner = {
             console.log("k: "+k);
             for(var i = 0; i<k; i++)
             {
-                extendedBody.concat(currentBody);
+                extendedBody = extendedBody.concat(currentBody);
             }
 
             return extendedBody;
