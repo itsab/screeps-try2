@@ -7,7 +7,7 @@ var roleClaimer = {
 
         if(creep.room.name != roomName)
         {
-            const route = Game.map.findRoute(creep.room, anotherRoomName);
+            const route = Game.map.findRoute(creep.room, roomName);
             if(route.length > 0) {
                 console.log('Now heading to room '+route[0].room);
                 const exit = creep.pos.findClosestByRange(route[0].exit);
