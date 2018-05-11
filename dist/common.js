@@ -19,7 +19,7 @@ var common = {
         } else
             var containers = Memory.containers.map(Game.getObjectById);
 
-            var container = creep.room.findClosestByPath(containers, {
+            var container = creep.pos.findClosestByPath(containers, {
                 filter: (structure) => {
                     return structure.store[RESOURCE_ENERGY] > 300;
                 }
