@@ -7,6 +7,14 @@ var tower = {
             var tower = towers[key];
             //attack
             //TODO attack logic (range restricted)
+            var towerRange = 15;
+            var attackThreshold = 10;
+            var enemies = tower.room.findInRange(FIND_HOSTILE_CREEPS,towerRange);
+            if(enemies.length > 0 && Memory.underAttack > attackThreshold)
+            {
+                var enemy = tower.pos.findClosestByRange(enemies);
+                tower.attack(enemy);
+            }
 
             //repair structures
             if(tower.energy / tower.energyCapacity > 0.5)
