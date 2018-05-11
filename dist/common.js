@@ -19,7 +19,6 @@ var common = {
         } else
         {
             var containers = Memory.containers.map(Game.getObjectById);
-            console.log(containers);
             if(containers.length > 0) {
                 var container = creep.pos.findClosestByPath(containers, {
                     filter: (structure) => {
@@ -28,11 +27,9 @@ var common = {
                 });
             }
 
-            //console.log(container);
 
             if(container)
             {
-                console.log("if");
                 if(creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(container, {visualizePathStyle: {stroke: '#ffaa00'}});
                 }
