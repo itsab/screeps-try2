@@ -18,7 +18,7 @@ var common = {
             }
         } else
             var containers = Memory.containers.map(Game.getObjectById);
-            //console.log(containers);
+            console.log(containers);
             if(containers.length > 0) {
                 var container = creep.pos.findClosestByPath(containers, {
                     filter: (structure) => {
