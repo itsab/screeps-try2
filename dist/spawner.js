@@ -30,9 +30,10 @@ var spawner = {
         //loop through all roles
         for(var key in creepsT)
         {
-            console.log(key);
 
             var numberOfAliveCreeps = _.filter(Game.creeps, (creep) => {return (creep.memory.role == key)});
+            console.log(numberOfAliveCreeps);
+
             if(numberOfAliveCreeps.length < creepsT[key])
             {
                 console.log(numberOfAliveCreeps.length + "<" + creepsT[key] + " - not enough "+ key + "s");
