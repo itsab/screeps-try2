@@ -6,7 +6,7 @@ var spawner = {
             var baseCapacity = 300;
             var availableEnergy = Game.spawns.Spawn1.room.energyAvailable;
             var k = parseInt(availableEnergy / baseCapacity);
-
+            console.log("k: "+k);
             for(var i = 0; i<k; i++)
             {
                 extendedBody.concat(currentBody);
@@ -30,8 +30,8 @@ var spawner = {
             //combine new creep body
             var basicBody = spawnerObj.creepBodys[key];
             var extendedBody = extendBody(basicBody);
-            console.log("basic"+basicBody);
-            console.log("extended"+extendedBody);
+            console.log("basic: "+basicBody);
+            console.log("extended: "+extendedBody);
             //DEBUG END
 
             var numberOfAliveCreeps = _.filter(Game.creeps, (creep) => {return (creep.memory.role == key)});
