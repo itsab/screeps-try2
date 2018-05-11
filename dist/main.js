@@ -65,7 +65,7 @@ module.exports.loop = function () {
 	}
 	
 	//use towers
-	//tower.run();
+	tower.run();
 
 	//run every10ticks
 	if(Game.time % 10 == 0)
