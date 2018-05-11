@@ -78,11 +78,7 @@ module.exports.loop = function () {
         {
 			for(var roomName in Memory.rooms)
 			{
-				var room = Game.rooms[roomName];
-				if(room == undefined)
-				{
-                    claimer.run(creep,roomName);
-				}
+				claimer.run(creep,roomName);
 			}
 
         }
