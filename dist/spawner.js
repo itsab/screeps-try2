@@ -3,7 +3,8 @@ var spawner = {
         //private functions
         var extendBody = function(currentBody) {
             var extendedBody = [];
-            var baseCapacity = 300;
+            var currentBodyCost = bodyCost(currentBody);
+            var baseCapacity = currentBodyCost;
             var availableEnergy = Game.spawns.Spawn1.room.energyCapacityAvailable;
             var k = parseInt(availableEnergy / baseCapacity);
 
@@ -15,7 +16,11 @@ var spawner = {
             return extendedBody;
         }
 
-
+        function bodyCost (body) {
+            return body.reduce(function (cost, part) {
+                return cost + BODYPART_COST[part];
+            }, 0);
+        }
 
         //start
         var spawnerObj = Memory.spawner;
