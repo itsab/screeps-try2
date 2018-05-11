@@ -24,7 +24,7 @@ Memory.rooms = {
     "E43S26":{}
 };
 
-Memory.containers = ["5af4760c216b0559d3a13b15","5af4a6b43d614859f1ed8175"];
+Memory.containers = ["5af4a6b43d614859f1ed8175"];
 
 module.exports.loop = function () {
 
