@@ -129,9 +129,15 @@ var spawner = {
             //) {
                 //console.log('Unit deathChecker: Found dead creep ' + i + '. Deleting...');
                 removeQueue.push(i);
-            //} else if (settings.deathChecker.copy.indexOf(Memory.creeps[i].role) !== -1) {
-                console.log('Unit deathChecker: Found dead creep ' + i + '. Copying...');
-                spawner.spawnQueue.push(creepObj);
+
+                if(Memory.creeps[i].dontRespawn != true){
+                    console.log('Unit deathChecker: Found dead creep ' + i + '. Copying...');
+                    spawner.spawnQueue.push(creepObj);
+                } else {
+                    console.log('Unit deathChecker: Found dead creep ' + i + ' that will not be copied!');
+
+                }
+
 
             //} else {
             //    console.log('Unit deathChecker: Found dead creep ' + i + '. Dunno what to do...');
