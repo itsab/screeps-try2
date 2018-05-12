@@ -38,7 +38,7 @@ var roleHarvester = {
             if(creep.harvest(nearSource) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(nearSource, {visualizePathStyle: {stroke: '#ffaa00'}});
             }*/
-            common.getEnergyFromContainers(creep);
+            common.getEnergy(creep);
         }
     }
 };
