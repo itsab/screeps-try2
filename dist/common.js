@@ -20,7 +20,7 @@ var common = {
     },
 
     runTask: function (creep, task) {
-        switch(task) {
+        switch(task.type) {
             case "haul":
                 var from = Game.getObjectById(task.from);
                 var to = Game.getObjectById(task.to);
