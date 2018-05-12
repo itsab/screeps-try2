@@ -18,6 +18,13 @@ var common = {
         }
 
     },
+    getEnergy: function(creep) {
+      //TODO get energy from storage -> container -> source
+      //cost = totalEnergy / Range ( * modifier?)
+      //the bigger the better
+
+
+    },
 
     runTask: function (creep, task) {
         switch(task.type) {
