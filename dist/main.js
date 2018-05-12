@@ -134,12 +134,12 @@ var every10ticks = function() {
 
     var towers = Game.spawns.Spawn1.room.find(FIND_STRUCTURES, {filter:{structureType: STRUCTURE_TOWER}}).map(function(element){return element.id});
     console.log("towers: "+towers_);
-    Memory.towers = towers;
+    Memory.towers = towers_;
 
 	var containers = Game.spawns.Spawn1.room.find(FIND_STRUCTURES, {filter:{structureType: STRUCTURE_CONTAINER}}).map(function(element){return element.id});
 	console.log("containers: "+containers_);
 	//console.log("cont mem: "+Memory.containers);
-	Memory.containers = containers;
+	Memory.containers = containers_;
 
-	Memory.spawner.creepsT.driller.buildCount = containers.length;
+	Memory.spawner.creepsT.driller.buildCount = containers_.length;
 }
