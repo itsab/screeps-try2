@@ -35,7 +35,7 @@ var common = {
                     if(creep.withdraw(from, task.resource) == OK) {
                         creep.memory.hauling = true;
                     } else {
-                        console.log("moveTo");
+                        //console.log("moveTo");
                         creep.moveTo(from, {visualizePathStyle: {stroke: '#ffaa00'}});
                     }
                 } else {
