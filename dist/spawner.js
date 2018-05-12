@@ -109,6 +109,11 @@ var spawner = {
             //    console.log('Unit deathChecker: Found dead creep ' + i + '. Dunno what to do...');
         }
 
+        //delete dead creeps after they are added to spawnQueue
+        for (var i = 0; i < removeQueue.length; i++) {
+            delete Memory.creeps[removeQueue[i]];
+        }
+
         //write back to Memory
         Memory.spawner = spawner;
     }
