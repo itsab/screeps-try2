@@ -63,7 +63,7 @@ var common = {
                     creep.memory.hauling = false;
                 }
 
-                if(creep.memory.hauling == false)
+                if(creep.memory.hauling == false || creep.carry.energy == 0)
                 {
                     if(creep.withdraw(from, task.resource) == OK) {
                         creep.memory.hauling = true;
