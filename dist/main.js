@@ -59,6 +59,7 @@ module.exports.loop = function () {
 		{
 			if(countBuilder < 1){
 				creep.memory.roomName = "E43S26";
+				countBuilder++;
 			}
 		    builder.run(creep);
 		}
