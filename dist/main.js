@@ -162,5 +162,6 @@ var every10ticks = function() {
 
 	Memory.storages = storages_;
 
-	Memory.spawner.creepsT.driller.buildCount = containers_.length;
+	//set driller counter according to containers (output/storage containers produce too many drillers)
+	//Memory.spawner.creepsT.driller.buildCount = containers_.length;
 }
