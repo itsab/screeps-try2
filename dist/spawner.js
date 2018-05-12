@@ -50,7 +50,10 @@ var spawner = {
                 spawnerObj.toSpawn = false;
                 console.log('Spawning new '+ role+ ': ' + newName);
                 console.log('Body: '+extendedBody);
-            };
+            } else {
+                //readd the creepObj to the first position in the queue if spawning fails
+                spawnerObj.spawnQueue.unshift(creepObj);
+            }
 
             return;
         }
