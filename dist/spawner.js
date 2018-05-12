@@ -33,11 +33,15 @@ var spawner = {
         }
 
         //check if there is something in the spawn queue
-        if(Memory.spawner.spawnQueue.length > 0)
+        if(spawnerObj.spawnQueue.length > 0)
         {
             console.log("trying to respawn dead creeps from spawnQueue");
             var creepObj = spawnerObj.spawnQueue.shift();
             console.log(JSON.stringify(creepObj));
+
+
+            //respawn dead creep from spawnQueue
+
 
             return;
         }
@@ -96,7 +100,7 @@ var spawner = {
 
             var creepObj = {};
             creepObj["role"] = Memory.creeps[i].role;
-            creepObj["memory"] = Memory.creeps[i].memory;
+            creepObj["memory"] = Memory.creeps[i];
 
             console.log(JSON.stringify(creepObj));
 
