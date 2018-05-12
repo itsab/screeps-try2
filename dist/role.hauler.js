@@ -8,6 +8,8 @@ var roleHauler = {
         if(task != undefined)
         {
             common.runTask(creep,task);
+        } else {
+            creep.say("no task");
         }
 
 	}
