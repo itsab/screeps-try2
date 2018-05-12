@@ -26,8 +26,11 @@ var common = {
                 var to = Game.getObjectById(task.to);
                 console.log("from: "+from);
                 console.log("to: "+to);
+                if(creep.memory.hauling == undefined)
+                {
+                    creep.memory.hauling = false;
+                }
 
-                creep.memory.hauling = false;
                 if(creep.memory.hauling == false)
                 {
                     if(creep.withdraw(from, task.resouce) == OK) {
