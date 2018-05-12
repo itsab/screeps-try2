@@ -56,7 +56,7 @@ var spawner = {
             var extendedBody = extendBody(basicBody);
 
             //respawn dead creep from spawnQueue
-            if(Game.spawns['Spawn1'].spawnCreep(extendedBody, newName,{memory: creepObj.memory}) == OK){
+            if(Game.spawns['Spawn1'].spawnCreep(extendedBody, newName,{memory: memory}) == OK){
                 spawnerObj.toSpawn = false;
                 console.log('Spawning new '+ role+ ': ' + newName);
                 console.log('Body: '+extendedBody);
