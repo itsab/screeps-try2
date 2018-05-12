@@ -62,7 +62,7 @@ module.exports.loop = function () {
 		{
             if(countBuilder < 1)
             {
-                creep.memory.roomName = "E43S26";
+                //creep.memory.roomName = "E43S26";
                 //builder.run(creep, "E43S26");
                 countBuilder++;
             }
@@ -85,7 +85,7 @@ module.exports.loop = function () {
         	if(countUpgrader < 1)
 			{
                 //upgrader.run(creep, "E43S26");
-                creep.memory.roomName = "E43S26";
+                //creep.memory.roomName = "E43S26";
                 countUpgrader++;
 			}
             upgrader.run(creep, "E43S27");
