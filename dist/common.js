@@ -1,14 +1,4 @@
 var common = {
-    getEnergyFromSpawn: function (creep) {
-        if (Memory.spawner.toSpawn == false) {
-            if (creep.withdraw(Game.spawns.Spawn1, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                creep.moveTo(Game.spawns.Spawn1,{visualizePathStyle: {stroke: '#ffaa00'}});
-            }
-        } else {
-            creep.moveTo(Game.spawns.Spawn1,{visualizePathStyle: {stroke: '#ffaa00'}});
-        }
-    },
-
     getEnergyFromStorage: function (creep) {
         if(Memory.storages[0] != undefined){
             var storage = Game.getObjectById(Memory.storages[0]);
@@ -19,11 +9,47 @@ var common = {
 
     },
     getEnergy: function(creep) {
-      //TODO get energy from storage -> container -> source
-      //cost = totalEnergy / Range ( * modifier?)
-      //the bigger the better
+        //TODO get energy from storage -> container -> source
+        //cost = totalEnergy / Range ( * modifier?)
+        //the bigger the better
+
+        var sortContainers = function(a, b)
+        {
+            var ar = a.store[RESOURCE_ENERGY] / (creep.pos.getRangeTo(a) / 3);
+            var br = b.store[RESOURCE_ENERGY] / (creep.pos.getRangeTo(b) / 3);
+
+            if(ar == br)
+                return 0;
+
+            return (ar < br ? 1 : -1);
+        }
 
 
+        var energyContainers = creep.pos.find(FIND_STRUCTURES, {
+            filter: (structure) => {
+                return (structure.structureType == STRUCTURE_CONTAINER || structure.structureType == STRUCTURE_STORAGE) &&
+                    structure.store[RESOURCE_ENERGY] > 0;
+            }
+        });
+
+        //get energy from containers
+        if(energyContainers.length > 0)
+        {
+            //sort energyContainers by amount / (range/3)
+            energyContainers.sort(sortContainers);
+            var energyContainer = energyContainers[0];
+
+            //get energy from chosen container
+            if(creep.withdraw(energyContainer,RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                creep.moveTo(energyContainer);
+            }
+
+        } else { // go mine nearest source
+            var sources = creep.room.find(FIND_SOURCES_ACTIVE);
+            if(creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
+                creep.moveTo(sources[0]);
+            }
+        }
     },
 
     runTask: function (creep, task) {
