@@ -74,6 +74,10 @@ module.exports.loop = function () {
         {
             driller.run(creep);
         }
+        if(creep.memory.role == 'hauler')
+        {
+            hauler.run(creep);
+        }
         if(creep.memory.role == 'upgrader')
         {
         	if(countUpgrader < 1)
