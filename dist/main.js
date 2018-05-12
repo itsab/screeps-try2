@@ -126,7 +126,7 @@ var every10ticks = function() {
     {
         var room = Game.rooms[roomName];
         //console.log(room);
-        console.log(typeof room.find(FIND_STRUCTURES, {filter:{structureType: STRUCTURE_CONTAINER}}).map(function(element){return element.id}));
+        console.log(JSON.stringify(room.find(FIND_STRUCTURES, {filter:{structureType: STRUCTURE_CONTAINER}}).map(function(element){return element.id})));
 
         towers = towers_.concat(room.find(FIND_STRUCTURES, {filter:{structureType: STRUCTURE_TOWER}}).map(function(element){return element.id}));
         containers = containers_.concat(room.find(FIND_STRUCTURES, {filter:{structureType: STRUCTURE_CONTAINER}}).map(function(element){return element.id}));
