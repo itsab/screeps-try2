@@ -48,6 +48,9 @@ var spawner = {
             delete memory.building;
             delete memory.upgrading;
 
+            console.log("copied creep: "+JSON.stringify(creepObj));
+
+
             var newName = role + Game.time;
             var basicBody = spawnerObj.creepsT[role].body;
             var extendedBody = extendBody(basicBody);
@@ -122,7 +125,7 @@ var spawner = {
             creepObj["role"] = Memory.creeps[i].role;
             creepObj["memory"] = Memory.creeps[i];
 
-            console.log(JSON.stringify(creepObj));
+            //console.log(JSON.stringify(creepObj));
 
             //if (settings.deathChecker.ignore.indexOf(Memory.creeps[i].role) !== -1 ||
              //   ("copyOnDeath" in Memory.creeps[i] && Memory.creeps[i].copyOnDeath === false)
