@@ -32,6 +32,7 @@ var common = {
 
                 if(creep.memory.hauling == false)
                 {
+                    console.log(creep.withdraw(from, task.resouce));
                     if(creep.withdraw(from, task.resouce) == OK) {
                         creep.memory.hauling = true;
                     } else {
