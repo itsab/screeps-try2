@@ -42,20 +42,15 @@ var spawner = {
 
             var role = creepObj.role;
             var newName = role + Game.time;
-            ar basicBody = spawnerObj.creepsT[role].body;
+            var basicBody = spawnerObj.creepsT[role].body;
             var extendedBody = extendBody(basicBody);
 
+            //respawn dead creep from spawnQueue
             if(Game.spawns['Spawn1'].spawnCreep(extendedBody, newName,{memory: {role: key}}) == OK){
                 spawnerObj.toSpawn = false;
                 console.log('Spawning new '+ role+ ': ' + newName);
                 console.log('Body: '+extendedBody);
             };
-
-            //console.log(JSON.stringify(creepObj));
-
-
-            //respawn dead creep from spawnQueue
-
 
             return;
         }
