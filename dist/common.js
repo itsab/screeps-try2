@@ -24,6 +24,8 @@ var common = {
             case "haul":
                 var from = Game.getObjectById(task.from);
                 var to = Game.getObjectById(task.to);
+                console.log("from: "+from);
+                console.log("to: "+to);
 
                 creep.memory.hauling = false;
                 if(creep.memory.hauling == false)
