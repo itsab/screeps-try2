@@ -9,6 +9,16 @@ var common = {
         }
     },
 
+    getEnergyFromStorage: function (creep) {
+        if(Memory.storages[0] != undefined){
+            var storage = Game.getObjectById(Memory.storages[0]);
+            if (creep.withdraw(storage, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                creep.moveTo(storage,{visualizePathStyle: {stroke: '#ffaa00'}});
+            }
+        }
+
+    },
+
     getEnergyFromContainers: function (creep) {
         var droppedEnergy = creep.pos.findInRange(FIND_DROPPED_RESOURCES, 10, {filter: {resourceType: RESOURCE_ENERGY}});
         if(droppedEnergy.length > 0)
