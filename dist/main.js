@@ -47,6 +47,8 @@ module.exports.loop = function () {
 
     //use creeps
 	var countUpgrader = 0;
+	var countBuilder = 0;
+
 	for(var name in Game.creeps) {
 		var creep = Game.creeps[name];
 		if(creep.memory.role == 'harvester')
@@ -55,6 +57,9 @@ module.exports.loop = function () {
 		}
 		if(creep.memory.role == 'builder')
 		{
+			if(countBuilder < 1){
+				creep.memory.roomName = "E43S26";
+			}
 		    builder.run(creep);
 		}
 		if(creep.memory.role == 'guard')
