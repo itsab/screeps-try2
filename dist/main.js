@@ -47,6 +47,7 @@ module.exports.loop = function () {
 
     //use creeps
 	var countUpgrader = 0;
+	var countBuilder = 0;
 	for(var name in Game.creeps) {
 		var creep = Game.creeps[name];
 		if(creep.memory.role == 'harvester')
@@ -55,6 +56,11 @@ module.exports.loop = function () {
 		}
 		if(creep.memory.role == 'builder')
 		{
+            if(countBuilder < 1)
+            {
+                builder.run(creep, "E43S26");
+                countUpgrader++;
+            }
 		    builder.run(creep);
 		}
 		if(creep.memory.role == 'guard')
@@ -119,4 +125,6 @@ var every10ticks = function() {
 	//console.log("containers: "+containers);
 	//console.log("cont mem: "+Memory.containers);
 	Memory.containers = containers;
+
+	Memory.spawner.creepsT.driller.buildCount = containers.length;
 }
