@@ -52,6 +52,7 @@ var spawner = {
                 console.log('Body: '+extendedBody);
             } else {
                 //readd the creepObj to the first position in the queue if spawning fails
+                console.log("readded creep to spawnQueue")
                 spawnerObj.spawnQueue.unshift(creepObj);
             }
 
