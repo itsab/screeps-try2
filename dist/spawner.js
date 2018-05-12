@@ -40,7 +40,14 @@ var spawner = {
             console.log("trying to respawn dead creeps from spawnQueue");
             var creepObj = spawnerObj.spawnQueue.shift();
 
-            var role = creepObj.role;
+            var role = creepObj.role
+
+            //reset occupation boolean
+            var memory = creepObj.memory;
+            delete memory.hauling;
+            delete memory.building;
+            delete memory.upgrading;
+
             var newName = role + Game.time;
             var basicBody = spawnerObj.creepsT[role].body;
             var extendedBody = extendBody(basicBody);
