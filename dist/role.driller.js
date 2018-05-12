@@ -9,7 +9,9 @@ var roleDriller = {
             creep.harvest(creep.pos.findInRange(FIND_SOURCES,1)[0]);
         } else
         {
-            var containersNearSource = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+            var containers = Memory.containers.map(Game.getObjectById);
+
+            var containersNearSource = creep.pos.findClosestByRange(containers, {
                 filter: (structure) => {
                     return structure.structureType == STRUCTURE_CONTAINER &&
                         structure.pos.findInRange(FIND_SOURCES, 1).length > 0 &&
@@ -17,7 +19,7 @@ var roleDriller = {
                 }});
 
 
-            //console.log("containers near sources with no creep on it: "+containersNearSource);
+            console.log("containers near sources with no creep on it: "+containersNearSource);
             if(containersNearSource)
             {
 
