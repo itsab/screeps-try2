@@ -22,19 +22,22 @@ var common = {
     runTask: function (creep, task) {
         switch(task) {
             case "haul":
+                var from = Game.getObjectById(task.from);
+                var to = Game.getObjectById(task.to);
+
                 creep.memory.hauling = false;
                 if(creep.memory.hauling == false)
                 {
-                    if(creep.withdraw(task.from, task.resouce) == OK) {
+                    if(creep.withdraw(from, task.resouce) == OK) {
                         creep.memory.hauling = true;
                     } else {
-                        creep.moveTo(task.from, {visualizePathStyle: {stroke: '#ffaa00'}});
+                        creep.moveTo(from, {visualizePathStyle: {stroke: '#ffaa00'}});
                     }
                 } else {
-                    if(creep.transfer(task.to, task.resouce) == OK) {
+                    if(creep.transfer(to, task.resouce) == OK) {
                         creep.memory.hauling = false;
                     } else {
-                        creep.moveTo(task.to, {visualizePathStyle: {stroke: '#ffaa00'}});
+                        creep.moveTo(to, {visualizePathStyle: {stroke: '#ffaa00'}});
                     }
                 }
                 break;

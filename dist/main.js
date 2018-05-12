@@ -15,7 +15,7 @@ Memory.spawner =   {
         harvester: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 4, priority:1 },
         driller: { body:[MOVE,MOVE,WORK,WORK], buildCount: 2, priority:1 },
         builder: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 3, priority:1 },
-        hauler: { body:[MOVE,MOVE,MOVE,CARRY,CARRY,CARRY], buildCount: 0, priority:1 },
+        hauler: { body:[MOVE,MOVE,MOVE,CARRY,CARRY,CARRY], buildCount: 1, priority:1 },
         upgrader: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 3, priority:1 },
         guardian: { body:[MOVE,MOVE,ATTACK,ATTACK], buildCount: 1, priority:1 },
 		claimer: { body:[MOVE,MOVE,CLAIM], buildCount: 0, priority:1 }
@@ -26,6 +26,8 @@ Memory.rooms = {
 	"E43S27":{},
     "E43S26":{}
 };
+
+var testTask = {type:"haul",resource:RESOURCE_ENERGY,from:"5af4a6b43d614859f1ed8175",to:"5af6fda89f8ba0792ba7cc19"};
 
 Memory.containers = ["5af4a6b43d614859f1ed8175"];
 
