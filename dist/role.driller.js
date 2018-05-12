@@ -17,7 +17,7 @@ var roleDriller = {
                 }});
 
 
-            console.log("containers near sources with no creep on it: "+containersNearSource);
+            //console.log("containers near sources with no creep on it: "+containersNearSource);
             if(containersNearSource)
             {
 
