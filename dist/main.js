@@ -121,6 +121,7 @@ var every10ticks = function() {
 
     var towers_ = [];
     var containers_ = [];
+    var storages_ = [];
 
 
     for(var roomName in Game.rooms)
@@ -131,16 +132,20 @@ var every10ticks = function() {
 
         towers_ = towers_.concat(room.find(FIND_STRUCTURES, {filter:{structureType: STRUCTURE_TOWER}}).map(function(element){return element.id}));
         containers_ = containers_.concat(room.find(FIND_STRUCTURES, {filter:{structureType: STRUCTURE_CONTAINER}}).map(function(element){return element.id}));
+        storages_ = storages_.concat(room.find(FIND_STRUCTURES, {filter:{structureType: STRUCTURE_STORAGE}}).map(function(element){return element.id}));
+
     }
 
-    var towers = Game.spawns.Spawn1.room.find(FIND_STRUCTURES, {filter:{structureType: STRUCTURE_TOWER}}).map(function(element){return element.id});
+    //var towers = Game.spawns.Spawn1.room.find(FIND_STRUCTURES, {filter:{structureType: STRUCTURE_TOWER}}).map(function(element){return element.id});
     //console.log("towers: "+towers_);
     Memory.towers = towers_;
 
-	var containers = Game.spawns.Spawn1.room.find(FIND_STRUCTURES, {filter:{structureType: STRUCTURE_CONTAINER}}).map(function(element){return element.id});
+	//var containers = Game.spawns.Spawn1.room.find(FIND_STRUCTURES, {filter:{structureType: STRUCTURE_CONTAINER}}).map(function(element){return element.id});
 	//console.log("containers: "+containers_);
 	//console.log("cont mem: "+Memory.containers);
 	Memory.containers = containers_;
+
+	Memory.storages = storages_;
 
 	Memory.spawner.creepsT.driller.buildCount = containers_.length;
 }
