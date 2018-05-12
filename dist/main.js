@@ -64,7 +64,7 @@ module.exports.loop = function () {
             {
                 creep.memory.roomName = "E43S26";
                 //builder.run(creep, "E43S26");
-                countUpgrader++;
+                countBuilder++;
             }
 		    builder.run(creep);
 		}
