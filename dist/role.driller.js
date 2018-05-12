@@ -20,12 +20,12 @@ var roleDriller = {
             console.log("containers near sources with no creep on it: "+containersNearSource);
             if(containersNearSource)
             {
-                var asd;
-                if(asd){
 
+                if(creep.pos.getRangeTo(containersNearSource) > 1){
+                    //move to empty container spot
+                    creep.moveTo(containersNearSource, {visualizePathStyle: {stroke: '#ffcc00'}})
                 }
-                //move to empty container spot
-                creep.moveTo(containersNearSource, {visualizePathStyle: {stroke: '#ffcc00'}})
+
 
                 //move to not empty container spot and push creep away
             }
