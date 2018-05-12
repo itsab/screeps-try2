@@ -13,7 +13,7 @@ Memory.spawner =   {
     toSpawn:false,
 	creepsT: {
         harvester: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 2, priority:1 },
-        driller: { body:[MOVE,MOVE,WORK,WORK], buildCount: 2, priority:1 },
+        driller: { body:[MOVE,MOVE,WORK,WORK], buildCount: 3, priority:1 },
         builder: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 3, priority:1 },
         hauler: { body:[MOVE,MOVE,MOVE,CARRY,CARRY,CARRY], buildCount: 4, priority:1 },
         upgrader: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 3, priority:1 },
