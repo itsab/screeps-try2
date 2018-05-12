@@ -51,6 +51,8 @@ var spawner = {
                 var basicBody = spawnerObj.creepsT[key].body;
                 var extendedBody = extendBody(basicBody);
 
+                console.log(key ": trying to spawn - extendedBody: "+extendedBody);
+
                 //spawning new creep with the role already in memory
                 if(Game.spawns['Spawn1'].spawnCreep(extendedBody, newName,{memory: {role: key}}) == OK){
                     spawnerObj.toSpawn = false;
