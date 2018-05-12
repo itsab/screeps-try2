@@ -117,12 +117,23 @@ module.exports.loop = function () {
 }
 
 var every10ticks = function() {
-    var towers = Game.spawns.Spawn1.room.find(FIND_STRUCTURES, {filter:{structureType: STRUCTURE_TOWER}}).map(function(element){return element.id});
-    //console.log("towers: "+towers);
+
+    var towers = [];
+    var containers = [];
+
+
+    for(var room in Game.rooms)
+    {
+        towers = towers.concat(Game.rooms[room].find(FIND_STRUCTURES, {filter:{structureType: STRUCTURE_TOWER}}).map(function(element){return element.id}));
+        containers = containers.concat(Game.rooms[room].find(FIND_STRUCTURES, {filter:{structureType: STRUCTURE_TOWER}}).map(function(element){return element.id}));
+    }
+
+    //var towers = Game.spawns.Spawn1.room.find(FIND_STRUCTURES, {filter:{structureType: STRUCTURE_TOWER}}).map(function(element){return element.id});
+    console.log("towers: "+towers);
     Memory.towers = towers;
 
-	var containers = Game.spawns.Spawn1.room.find(FIND_STRUCTURES, {filter:{structureType: STRUCTURE_CONTAINER}}).map(function(element){return element.id});
-	//console.log("containers: "+containers);
+	//var containers = Game.spawns.Spawn1.room.find(FIND_STRUCTURES, {filter:{structureType: STRUCTURE_CONTAINER}}).map(function(element){return element.id});
+	console.log("containers: "+containers);
 	//console.log("cont mem: "+Memory.containers);
 	Memory.containers = containers;
 
