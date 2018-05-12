@@ -7,10 +7,12 @@ var roleHauler = {
         var task = creep.memory.task;
         if(task != undefined)
         {
-            
+            common.runTask(creep,task);
         }
 
 	}
 };
 
 module.exports = roleHauler;
+
+//task:{type:"haul",resource:RESOURCE_ENERGY,from:"",to:""}

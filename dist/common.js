@@ -19,6 +19,31 @@ var common = {
 
     },
 
+    runTask: function (creep, task) {
+        switch(task) {
+            case "haul":
+                creep.memory.hauling = false;
+                if(creep.memory.hauling == false)
+                {
+                    if(creep.withdraw(task.from, task.resouce) == OK) {
+                        creep.memory.hauling = true;
+                    } else {
+                        creep.moveTo(task.from, {visualizePathStyle: {stroke: '#ffaa00'}});
+                    }
+                } else {
+                    if(creep.transfer(task.to, task.resouce) == OK) {
+                        creep.memory.hauling = false;
+                    } else {
+                        creep.moveTo(task.to, {visualizePathStyle: {stroke: '#ffaa00'}});
+                    }
+                }
+                break;
+            case "build":
+                //TODO build task
+                break;
+        }
+    },
+
     getEnergyFromContainers: function (creep) {
         var droppedEnergy = creep.pos.findInRange(FIND_DROPPED_RESOURCES, 10, {filter: {resourceType: RESOURCE_ENERGY}});
         if(droppedEnergy.length > 0)
