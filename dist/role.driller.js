@@ -23,11 +23,18 @@ var roleDriller = {
 
                 if(creep.pos.getRangeTo(containersNearSource) > 1){
                     //move to empty container spot
+                    creep.moveTo(containersNearSource, {visualizePathStyle: {stroke: '#ffcc00'}});
+                } else {
+                    //move to not empty container spot and push creep away
+                    var otherCreep = containersNearSource.pos.lookFor(LOOK_CREEPS)[0];
+
+                    //move otherCreep out of the way (direction of room controller)
+                    otherCreep.moveTo(otherCreep.room.controller);
                     creep.moveTo(containersNearSource, {visualizePathStyle: {stroke: '#ffcc00'}})
                 }
 
 
-                //move to not empty container spot and push creep away
+
             }
         }
 
