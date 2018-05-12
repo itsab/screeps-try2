@@ -40,7 +40,7 @@ var common = {
                         creep.moveTo(from, {visualizePathStyle: {stroke: '#ffaa00'}});
                     }
                 } else {
-                    if(creep.transfer(to, task.resouce) == OK) {
+                    if(creep.transfer(to, task.resource) == OK) {
                         creep.memory.hauling = false;
                     } else {
                         creep.moveTo(to, {visualizePathStyle: {stroke: '#ffaa00'}});
