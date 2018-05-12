@@ -42,7 +42,11 @@ var roleDriller = {
                         var otherCreep = containersNearSource.pos.lookFor(LOOK_CREEPS)[0];
 
                         //move otherCreep out of the way (direction of room controller)
-                        otherCreep.moveTo(otherCreep.room.controller);
+                        if(otherCreep)
+                        {
+                            otherCreep.moveTo(otherCreep.room.controller);
+                        }
+
                         creep.moveTo(containersNearSource, {visualizePathStyle: {stroke: '#ffcc00'}})
                     }
 
