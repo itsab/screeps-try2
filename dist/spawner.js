@@ -35,9 +35,23 @@ var spawner = {
         //check if there is something in the spawn queue
         if(spawnerObj.spawnQueue.length > 0)
         {
+            spawnerObj.toSpawn = true;
+
             console.log("trying to respawn dead creeps from spawnQueue");
             var creepObj = spawnerObj.spawnQueue.shift();
-            console.log(JSON.stringify(creepObj));
+
+            var role = creepObj.role;
+            var newName = role + Game.time;
+            ar basicBody = spawnerObj.creepsT[role].body;
+            var extendedBody = extendBody(basicBody);
+
+            if(Game.spawns['Spawn1'].spawnCreep(extendedBody, newName,{memory: {role: key}}) == OK){
+                spawnerObj.toSpawn = false;
+                console.log('Spawning new '+ role+ ': ' + newName);
+                console.log('Body: '+extendedBody);
+            };
+
+            //console.log(JSON.stringify(creepObj));
 
 
             //respawn dead creep from spawnQueue
