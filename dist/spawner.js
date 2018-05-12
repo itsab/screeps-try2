@@ -32,6 +32,13 @@ var spawner = {
             return;
         }
 
+        //check if there is something in the spawn queue
+        if(Memory.spawner.queue.length > 0)
+        {
+
+        }
+
+
         //loop through all roles
         for(var key in creepsT)
         {
@@ -66,6 +73,34 @@ var spawner = {
         }
 
         Memory.spawner = spawnerObj;
+    },
+
+    //add dead creeps back to spawn queue
+    //https://github.com/avdg/screeps/blob/e98cf551ec3393c2c165d9a465851ee843694d2e/scripts/unit_deathChecker.js
+    deathChecker: function(){
+
+        for (var i in Memory.creeps) {
+
+            if (Game.creeps[i]) {
+                continue; // Ignore when creep is found alive
+            }
+
+            //if (settings.deathChecker.ignore.indexOf(Memory.creeps[i].role) !== -1 ||
+             //   ("copyOnDeath" in Memory.creeps[i] && Memory.creeps[i].copyOnDeath === false)
+            //) {
+                console.log('Unit deathChecker: Found dead creep ' + i + '. Deleting...');
+                removeQueue.push(i);
+            //} else if (settings.deathChecker.copy.indexOf(Memory.creeps[i].role) !== -1) {
+                console.log('Unit deathChecker: Found dead creep ' + i + '. Copying...');
+                utils.exec('creepClone', {
+                    /* Fake creep object*/
+                    role: Memory.creeps[i].role,
+                    memory: Memory.creeps[i]
+                }, true);
+                removeQueue.push(i);
+            //} else {
+            //    console.log('Unit deathChecker: Found dead creep ' + i + '. Dunno what to do...');
+        }
     }
 }
 

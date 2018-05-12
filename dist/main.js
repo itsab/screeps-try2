@@ -19,7 +19,8 @@ Memory.spawner =   {
         upgrader: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 3, priority:1 },
         guardian: { body:[MOVE,MOVE,ATTACK,ATTACK], buildCount: 1, priority:1 },
 		claimer: { body:[MOVE,MOVE,CLAIM], buildCount: 0, priority:1 }
-    }
+    },
+    queue: []
 };
 
 Memory.rooms = {
@@ -99,11 +100,12 @@ module.exports.loop = function () {
 	}
 
 	//clear dead creeps from memory
-    for(var i in Memory.creeps) {
+    //spawner.deathChecker();
+    /*for(var i in Memory.creeps) {
         if(!Game.creeps[i]) {
             delete Memory.creeps[i];
         }
-    }
+    }*/
 
 	//use towers
 	tower.run();
