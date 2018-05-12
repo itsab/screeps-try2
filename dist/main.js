@@ -20,7 +20,7 @@ Memory.spawner =   {
         guardian: { body:[MOVE,MOVE,ATTACK,ATTACK], buildCount: 1, priority:1 },
 		claimer: { body:[MOVE,MOVE,CLAIM], buildCount: 0, priority:1 }
     },
-    queue: []
+    spawnQueue: []
 };
 
 Memory.rooms = {
