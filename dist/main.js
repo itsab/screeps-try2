@@ -11,9 +11,9 @@ var common = require('common');
 Memory.spawner =   {
     toSpawn:false,
 	creepsT: {
-        harvester: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 4, priority:1 },
+        harvester: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 3, priority:1 },
         driller: { body:[MOVE,MOVE,WORK,WORK], buildCount: 2, priority:1 },
-        builder: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 3, priority:1 },
+        builder: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 4, priority:1 },
         hauler: { body:[MOVE,MOVE,MOVE,CARRY,CARRY,CARRY], buildCount: 0, priority:1 },
         upgrader: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 3, priority:1 },
         guardian: { body:[MOVE,MOVE,ATTACK,ATTACK], buildCount: 1, priority:1 },
