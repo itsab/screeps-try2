@@ -6,6 +6,7 @@ var driller = require('role.driller');
 var tower = require('tower');
 var spawner = require('spawner');
 var claimer = require('role.claimer');
+var hauler = require('role.hauler');
 var common = require('common');
 
 Memory.spawner =   {
