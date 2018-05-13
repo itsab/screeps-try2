@@ -33,8 +33,11 @@ var common = {
         });
 
         //get energy from containers
+
         if(energyContainers.length > 0)
         {
+            console.log(energyContainers);
+
             //sort energyContainers by amount / (range/3)
             energyContainers.sort(sortContainers);
             var energyContainer = energyContainers[0];
@@ -45,6 +48,8 @@ var common = {
             }
 
         } else { // go mine nearest source
+            console.log("go mine nearest source");
+
             var sources = creep.pos.findClosestByPath(FIND_SOURCES_ACTIVE);
             if(creep.harvest(sources) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(sources);
