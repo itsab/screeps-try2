@@ -30,7 +30,7 @@ var common = {
         });
 
         //find closest dropped energy in range
-        var dropped = creep.pos.findInRange(FIND_DROPPED_RESOURCES,{filter:{}});
+        var dropped = creep.pos.findInRange(FIND_DROPPED_RESOURCES,{filter:{resourceType:RESOURCE_ENERGY}});
         if(dropped.length > 0) {
             console.log("DEBUG:dropped");
             var energy = creep.pos.findClosestByPath(dropped);
