@@ -23,6 +23,8 @@ var roleClaimer = {
 
     },
     reserve: function(creep) {
+        var roomName = creep.memory.roomName;
+
         console.log("roomName: "+roomName);
         console.log("creepRoom: "+creep.pos.roomName);
         if(creep.pos.roomName != roomName)
