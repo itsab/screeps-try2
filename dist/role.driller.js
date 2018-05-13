@@ -4,7 +4,7 @@ var roleDriller = {
     run: function(creep) {
 
         //change room according to creep.memory.roomName
-        if(creep.pos.roomName != creep.memory.roomName)
+        if(creep.pos.roomName != creep.memory.roomName && creep.memory.roomName != undefined)
         {
             const route = Game.map.findRoute(creep.room, creep.memory.roomName);
             if(route.length > 0) {
@@ -15,10 +15,9 @@ var roleDriller = {
         } else {
 
             var containers = Memory.containers.map(Game.getObjectById);
-            var containers = Memory.containers.map(Game.getObjectById);
             if(containers.length > 0)
             {
-                var containersNearSource = creep.pos.findClosestByRange(containers, {
+                var containersNearSource = creep.pos.findClosestByPath(containers, {
                     filter: (structure) => {
                         return structure.structureType == STRUCTURE_CONTAINER &&
                             structure.pos.findInRange(FIND_SOURCES, 1).length > 0 &&
@@ -27,6 +26,7 @@ var roleDriller = {
 
 
                 //console.log("containers near sources with no creep on it: "+containersNearSource);
+                console.log(containersNearSource);
                 if(containersNearSource)
                 {
                     console.log("range to container: "+creep.pos.getRangeTo(containersNearSource));
