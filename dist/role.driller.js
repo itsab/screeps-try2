@@ -28,7 +28,7 @@ var roleDriller = {
             {
                 var containersNearSource = creep.pos.findClosestByPath(containers, {
                     filter: (structure) => {
-                        return structure.structureType == STRUCTURE_CONTAINER &&
+                        return structure != null && structure.structureType == STRUCTURE_CONTAINER &&
                             structure.pos.findInRange(FIND_SOURCES, 1).length > 0 &&
                             (structure.pos.lookFor(LOOK_CREEPS).length == 0 || structure.pos.lookFor(LOOK_CREEPS)[0].memory.role != "driller");
                     }});
