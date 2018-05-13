@@ -4,8 +4,6 @@ var roleClaimer = {
     run: function(creep) {
 
         var roomName = creep.memory.roomName;
-        console.log("roomName: "+roomName);
-        console.log("creepRoom: "+creep.pos.roomName);
         if(creep.pos.roomName != roomName)
         {
             const route = Game.map.findRoute(creep.room, roomName);
@@ -25,8 +23,6 @@ var roleClaimer = {
     reserve: function(creep) {
         var roomName = creep.memory.roomName;
 
-        console.log("roomName: "+roomName);
-        console.log("creepRoom: "+creep.pos.roomName);
         if(creep.pos.roomName != roomName)
         {
             const route = Game.map.findRoute(creep.room, roomName);
