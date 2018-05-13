@@ -9,6 +9,10 @@ var roleHauler = {
         {
             if(common.runTask(creep,task) == ERR_NOT_ENOUGH_RESOURCES){
                 common.getEnergyFromFloor(creep,10);
+                if(_.sum(creep.carry)==creep.carryCapacity)
+                {
+                    creep.memory.hauling = true;
+                }
             }
         } else {
             creep.say("no task");
