@@ -32,14 +32,14 @@ var common = {
         //find closest dropped energy in range
         var dropped = creep.pos.findInRange(FIND_DROPPED_RESOURCES,10,{filter:{resourceType:RESOURCE_ENERGY}});
         if(dropped.length > 0) {
-            console.log("DEBUG:dropped");
+            //console.log("DEBUG:dropped");
             var energy = creep.pos.findClosestByPath(dropped);
             if(creep.pickup(energy,RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(energy);
             }
         } else if(energyContainers.length > 0)  //get energy from containers
         {
-            console.log("DEBUG containers: "+energyContainers);
+            //console.log("DEBUG containers: "+energyContainers);
             //sort energyContainers by amount / (range/3)
             energyContainers.sort(sortContainers);
             var energyContainer = energyContainers[0];
