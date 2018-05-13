@@ -64,7 +64,7 @@ var spawner = {
             delete memory.building;
             delete memory.upgrading;
 
-            console.log("copied creep: "+JSON.stringify(creepObj));
+            console.log("copied creep: "+JSON.stringify(memory));
 
 
             var newName = role + Game.time;
