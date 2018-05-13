@@ -37,7 +37,7 @@ var roleDriller = {
                 //console.log("containers near sources with no creep on it: "+containersNearSource);
                 if(containersNearSource)
                 {
-                    console.log("range to container: "+creep.pos.getRangeTo(containersNearSource));
+                    //console.log("range to container: "+creep.pos.getRangeTo(containersNearSource));
                     if(creep.pos.getRangeTo(containersNearSource) > 1){
                         //move to empty container spot
                         creep.moveTo(containersNearSource, {visualizePathStyle: {stroke: '#ffcc00'}});
