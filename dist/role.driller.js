@@ -14,6 +14,15 @@ var roleDriller = {
             }
         } else {
 
+            //check if standing on container -> mine
+            if(creep.pos.lookFor(LOOK_STRUCTURES,{filter:{structureType:STRUCTURE_CONTAINER}}).length > 0)
+            {
+                var source = creep.pos.findInRange(FIND_SOURCES,1)[0];
+                if(source){
+                    creep.harvest(creep.pos.findInRange(FIND_SOURCES,1)[0]);
+                }
+            }
+
             var containers = Memory.containers.map(Game.getObjectById);
             if(containers.length > 0)
             {
@@ -43,18 +52,8 @@ var roleDriller = {
                         }
 
                         creep.moveTo(containersNearSource, {visualizePathStyle: {stroke: '#ffcc00'}})
-                    } else {
-                        var source = creep.pos.findInRange(FIND_SOURCES,1)[0];
-                        if(source){
-                            creep.harvest(creep.pos.findInRange(FIND_SOURCES,1)[0]);
-                        }
                     }
 
-                } else {
-                    var source = creep.pos.findInRange(FIND_SOURCES,1)[0];
-                    if(source){
-                        creep.harvest(creep.pos.findInRange(FIND_SOURCES,1)[0]);
-                    }
                 }
             }
 
