@@ -4,7 +4,7 @@ var roleDriller = {
     run: function(creep) {
 
         //change room according to creep.memory.roomName
-        if(creep.pos.roomName != creep.memory.roomName && creep.memory.roomName != undefined)
+        if(creep.pos.roomName != creep.memory.roomName)
         {
             const route = Game.map.findRoute(creep.room, creep.memory.roomName);
             if(route.length > 0) {
