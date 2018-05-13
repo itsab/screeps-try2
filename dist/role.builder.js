@@ -21,22 +21,29 @@ var roleBuilder = {
                 creep.say('building');
             }
 
+
             if(creep.memory.building) {
 
+                //prioritize repairing low buildings
                 var repairTargets = creep.room.find(FIND_STRUCTURES, {
                     filter: (structure) => { var calc = structure.hits / structure.hitsMax; return calc < 0.5; }
                 });
+                var target = creep.pos.findClosestByPath(FIND_MY_CONSTRUCTION_SITES);
 
                 if(repairTargets.length > 0) {
                     var repairTarget = creep.pos.findClosestByPath(repairTargets);
                     if(creep.repair(repairTarget) == ERR_NOT_IN_RANGE) {
                         creep.moveTo(repairTarget);
                     }
-                } else {
-                    var target = creep.pos.findClosestByPath(FIND_MY_CONSTRUCTION_SITES);
+                } else if(target){
+
                     if(creep.build(target) == ERR_NOT_IN_RANGE) {
                         creep.moveTo(target);
                     }
+                } else { //repair the rest
+                    var repairTarget = creep.pos.findClosestByPath(FIND_STRUCTURES, {
+                        filter: (structure) => { var calc = structure.hits / structure.hitsMax; return calc < 0.9; }
+                    });
                 }
 
             }
