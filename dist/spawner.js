@@ -16,6 +16,19 @@ var spawner = {
             return extendedBody;
         }
 
+        var sortQueue = function(a, b)
+        {
+            var creepsT = Memory.spawner.creepsT;
+
+            var ar = creepsT[a.role].priority;
+            var br = creepsT[b.role].priority;
+
+            if(ar == br)
+                return 0;
+
+            return (ar > br ? 1 : -1);
+        }
+
         function bodyCost (body) {
             return body.reduce(function (cost, part) {
                 return cost + BODYPART_COST[part];
@@ -37,7 +50,10 @@ var spawner = {
         {
             spawnerObj.toSpawn = true;
 
-            console.log("trying to respawn dead creeps from spawnQueue");
+            //resort the spawnQueue according to priority (higher prio is better -> first)
+            spawnerObj.sort(sortQueue);
+
+            //console.log("trying to respawn dead creeps from spawnQueue");
             var creepObj = spawnerObj.spawnQueue.shift();
 
             var role = creepObj.role
@@ -62,7 +78,7 @@ var spawner = {
                 console.log('Body: '+extendedBody);
             } else {
                 //readd the creepObj to the first position in the queue if spawning fails
-                console.log("readded creep to spawnQueue")
+                //console.log("readded creep to spawnQueue")
                 spawnerObj.spawnQueue.unshift(creepObj);
             }
 
