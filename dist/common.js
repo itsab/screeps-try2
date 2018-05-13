@@ -101,7 +101,7 @@ var common = {
                 break;
         }
     },
-    }
+
 }
 
 module.exports = common;
