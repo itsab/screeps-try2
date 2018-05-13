@@ -8,7 +8,9 @@ var roleHauler = {
         if(task != undefined)
         {
             if(common.runTask(creep,task) == ERR_NOT_ENOUGH_RESOURCES){
-                if(common.getEnergyFromFloor(creep,10)==ERR_FULL)
+                console.log("debug if");
+                var ret = common.getEnergyFromFloor(creep,10);
+                if(ret==ERR_FULL)
                 {
                     creep.memory.hauling = true;
                 }
