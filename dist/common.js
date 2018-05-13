@@ -9,9 +9,6 @@ var common = {
 
     },
     getEnergy: function(creep) {
-        //TODO get energy from storage -> container -> source
-        //cost = totalEnergy / Range ( * modifier?)
-        //the bigger the better
 
         var sortContainers = function(a, b)
         {
@@ -39,10 +36,7 @@ var common = {
             if(creep.pickup(energy,RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(energy);
             }
-        }
-
-        //get energy from containers
-        else if(energyContainers.length > 0)
+        } else if(energyContainers.length > 0)  //get energy from containers
         {
 
             //sort energyContainers by amount / (range/3)
