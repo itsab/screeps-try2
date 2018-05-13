@@ -51,7 +51,7 @@ var spawner = {
             spawnerObj.toSpawn = true;
 
             //resort the spawnQueue according to priority (higher prio is better -> first)
-            spawnerObj.sort(sortQueue);
+            spawnerObj.spawnQueue.sort(sortQueue);
 
             //console.log("trying to respawn dead creeps from spawnQueue");
             var creepObj = spawnerObj.spawnQueue.shift();
