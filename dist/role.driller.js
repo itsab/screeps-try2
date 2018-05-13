@@ -26,7 +26,6 @@ var roleDriller = {
 
 
                 //console.log("containers near sources with no creep on it: "+containersNearSource);
-                console.log(containersNearSource);
                 if(containersNearSource)
                 {
                     console.log("range to container: "+creep.pos.getRangeTo(containersNearSource));
@@ -51,6 +50,11 @@ var roleDriller = {
                         }
                     }
 
+                } else {
+                    var source = creep.pos.findInRange(FIND_SOURCES,1)[0];
+                    if(source){
+                        creep.harvest(creep.pos.findInRange(FIND_SOURCES,1)[0]);
+                    }
                 }
             }
 
