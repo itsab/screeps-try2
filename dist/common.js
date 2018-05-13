@@ -80,6 +80,7 @@ var common = {
                 if(creep.memory.hauling == false || creep.carry.energy == 0)
                 {
                     var ret = creep.withdraw(from, task.resource);
+                    console.log(ret);
                     if(ret == OK) {
                         creep.memory.hauling = true;
                     } else if(ret == ERR_NOT_ENOUGH_RESOURCES) {
