@@ -45,9 +45,9 @@ var common = {
             }
 
         } else { // go mine nearest source
-            var sources = creep.room.find(FIND_SOURCES_ACTIVE);
-            if(creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
-                creep.moveTo(sources[0]);
+            var sources = creep.pos.findClosestByPath(FIND_SOURCES_ACTIVE);
+            if(creep.harvest(sources) == ERR_NOT_IN_RANGE) {
+                creep.moveTo(sources);
             }
         }
     },

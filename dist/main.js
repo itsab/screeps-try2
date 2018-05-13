@@ -51,8 +51,7 @@ module.exports.loop = function () {
 		Memory.underAttack = 0;
 	}
 
-    //use spawner
-    spawner.run();
+
 
     //use creeps
 	var countUpgrader = 0;
@@ -113,6 +112,9 @@ module.exports.loop = function () {
             delete Memory.creeps[i];
         }
     }*/
+
+    //use spawner
+    spawner.run();
 
 	//use towers
 	tower.run();
