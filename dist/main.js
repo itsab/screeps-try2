@@ -60,6 +60,7 @@ module.exports.loop = function () {
 		var creep = Game.creeps[name];
 		if(creep.memory.role == 'harvester')
 		{
+		    console.log("harvester: "+creep);
 		    harvester.run(creep);
 		}
 		if(creep.memory.role == 'builder')
