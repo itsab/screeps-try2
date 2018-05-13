@@ -32,7 +32,7 @@ var roleClaimer = {
                 creep.moveTo(exit,{visualizePathStyle: {stroke: '#ffffff'}});
             }
         } else {
-            console.log("else");
+            //console.log("else");
             if(creep.reserveController(creep.room.controller) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(creep.room.controller, {visualizePathStyle: {stroke: '#ffffff'}});
             }
