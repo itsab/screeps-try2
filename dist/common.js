@@ -60,6 +60,7 @@ var common = {
             case "haul":
                 var from = Game.getObjectById(task.from);
                 var to = Game.getObjectById(task.to);
+                creep.say(task.name);
 
                 if(creep.memory.hauling == undefined)
                 {
