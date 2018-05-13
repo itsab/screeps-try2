@@ -7,7 +7,9 @@ var roleHauler = {
         var task = creep.memory.task;
         if(task != undefined)
         {
-            common.runTask(creep,task);
+            if(common.runTask(creep,task) == ERR_NOT_ENOUGH_RESOURCES){
+
+            }
         } else {
             creep.say("no task");
         }
