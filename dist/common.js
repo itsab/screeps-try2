@@ -35,7 +35,7 @@ var common = {
             return (ar < br ? 1 : -1);
         }
 
-        if(this.getEnergyFromFloor(creep,10) != OK) {
+        if(this.getEnergyFromFloor(creep,20) != OK) {
 
             var energyContainers = creep.room.find(FIND_STRUCTURES, {
                 filter: (structure) => {
