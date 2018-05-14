@@ -15,7 +15,7 @@ Memory.spawner =   {
         harvester: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 2, priority:10 },
         driller: { body:[MOVE,MOVE,WORK,WORK], buildCount: 3, priority:8 },
         builder: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 3, priority:2 },
-        hauler: { body:[MOVE,MOVE,CARRY,CARRY,CARRY,CARRY], buildCount: 4, priority:6 },
+        hauler: { body:[MOVE,MOVE,CARRY,CARRY,CARRY,CARRY], buildCount: 0, priority:6 },
         upgrader: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 3, priority:2 },
         guardian: { body:[MOVE,MOVE,ATTACK,ATTACK], buildCount: 1, priority:4 },
 		claimer: { body:[MOVE,CLAIM], buildCount: 1, priority:1 }
