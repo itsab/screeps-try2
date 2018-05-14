@@ -55,6 +55,11 @@ var roleDriller = {
                     }
 
                 }
+            } else{
+                var source = creep.pos.findClosestByPath(FIND_SOURCES_ACTIVE);
+                if(creep.harvest(source, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(source, {visualizePathStyle: {stroke: '#ffffff'}});
+                }
             }
 
         }
