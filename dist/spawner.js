@@ -26,7 +26,7 @@ var spawner = {
             if(ar == br)
                 return 0;
 
-            return (ar > br ? 1 : -1);
+            return (ar < br ? 1 : -1);
         }
 
         function bodyCost (body) {
