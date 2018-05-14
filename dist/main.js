@@ -23,6 +23,10 @@ Memory.spawner =   {
     //spawnQueue: []
 };
 
+if(Memory.spawner.spawnQueue == undefined){
+    Memory.spawner.spawnQueue = [];
+}
+
 Memory.rooms = {
 	"E43S27":{},
     "E43S26":{}
