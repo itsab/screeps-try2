@@ -15,7 +15,7 @@ var roleDriller = {
         } else {
 
             //check if standing on container -> mine
-            var structures = creep.pos.lookFor(LOOK_STRUCTURES,creep.pos);
+            var structures = creep.pos.lookFor(LOOK_STRUCTURES);
             if(structures.length > 0 && structures[0].type == STRUCTURE_CONTAINER)
             {
                 console.log("lookFOr");
