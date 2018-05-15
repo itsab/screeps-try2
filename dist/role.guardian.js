@@ -18,6 +18,7 @@ var roleGuardian = {
 
             if(target) {
                 creep.memory.lastKnownEnemy =  target.pos;
+                creep.memory.lastEnemySeen = 0;
                 if(creep.attack(target) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(target,{visualizePathStyle: {stroke: '#ffffff'}});
                 }
@@ -26,7 +27,8 @@ var roleGuardian = {
             {
                 var path = creep.room.findPath(creep.pos,creep.memory.lastKnownEnemy);
                 var ret = creep.moveByPath(path,{visualizePathStyle: {stroke: '#ffffff'}});
-                console.log(ret);
+                creep.memory.lastEnemySeen++;
+
                 if(ret == ERR_NO_PATH) {
                     delete creep.memory.lastKnownEnemy;
                 }
@@ -38,7 +40,11 @@ var roleGuardian = {
                     creep.moveTo(target,{visualizePathStyle: {stroke: '#ffffff'}});
                 }
             }
-            //creep.moveTo(creep.room.controller);
+
+            if(creep.memory.lastEnemySeen>5)
+            {
+                creep.moveTo(creep.room.controller);
+            }
         }
 
 
