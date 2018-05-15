@@ -13,17 +13,18 @@ var roleGuardian = {
         } else {
             var targets = creep.room.find(FIND_HOSTILE_CREEPS);
             var target = creep.pos.findClosestByPath(targets);
-            creep.memory.lastKnownEnemy =  target.pos;
-            if(creep.memory.lastKnownEnemy)
+
+
+
+            if(target) {
+                creep.memory.lastKnownEnemy =  target.pos;
+                if(creep.attack(target) == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(target,{visualizePathStyle: {stroke: '#ffffff'}});
+                }
+            } else if(creep.memory.lastKnownEnemy)
             {
                 if(creep.moveTo(creep.memory.lastKnownEnemy,{visualizePathStyle: {stroke: '#ffffff'}}) == ERR_NO_PATH) {
                     delete creep.memory.lastKnownEnemy;
-                }
-            }
-
-            if(target) {
-                if(creep.attack(target) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(target,{visualizePathStyle: {stroke: '#ffffff'}});
                 }
             }
 
