@@ -7,7 +7,7 @@ var tower = {
             var tower = towers[key];
             //attack
             //TODO attack logic (range restricted)
-            var towerRange = 30;
+            var towerRange = 300;
             var attackThreshold = 0;
             var enemies = tower.pos.findInRange(FIND_HOSTILE_CREEPS,towerRange);
             if(enemies.length > 0 && Memory.underAttack > attackThreshold)
