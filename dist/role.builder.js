@@ -33,12 +33,12 @@ var roleBuilder = {
                 if(repairTargets.length > 0) {
                     var repairTarget = creep.pos.findClosestByPath(repairTargets);
                     if(creep.repair(repairTarget) == ERR_NOT_IN_RANGE) {
-                        creep.moveTo(repairTarget);
+                        creep.moveTo(repairTarget,{visualizePathStyle: {stroke: '#ffffff'}});
                     }
                 } else if(target){
 
                     if(creep.build(target) == ERR_NOT_IN_RANGE) {
-                        creep.moveTo(target);
+                        creep.moveTo(target,{visualizePathStyle: {stroke: '#ffffff'}});
                     }
                 } else { //repair the rest
                     var repairTarget = creep.pos.findClosestByPath(FIND_STRUCTURES, {
