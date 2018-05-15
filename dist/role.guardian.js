@@ -24,7 +24,8 @@ var roleGuardian = {
             }
             if(creep.memory.lastKnownEnemy)
             {
-                var ret = creep.moveTo(creep.memory.lastKnownEnemy,{visualizePathStyle: {stroke: '#ffffff'}});
+                var path = creep.room.findPath(creep.pos,creep.memory.lastKnownEnemy);
+                var ret = creep.moveByPath(path,{visualizePathStyle: {stroke: '#ffffff'}});
                 console.log(ret);
                 if(ret == ERR_NO_PATH) {
                     delete creep.memory.lastKnownEnemy;
