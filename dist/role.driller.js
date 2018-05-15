@@ -20,6 +20,7 @@ var roleDriller = {
                 var source = creep.pos.findInRange(FIND_SOURCES,1)[0];
                 if(source){
                     creep.harvest(creep.pos.findInRange(FIND_SOURCES,1)[0]);
+                    return;
                 }
             }
 
