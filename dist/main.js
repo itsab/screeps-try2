@@ -33,10 +33,11 @@ Memory.rooms = {
     "E43S26":{}
 };
 
-var haulTask1 = {name:"task1",type:"haul",resource:RESOURCE_ENERGY,from:"5af4a6b43d614859f1ed8175",to:"5af6fda89f8ba0792ba7cc19"};
+var haulTask1 = {name:"task1",type:"haul",resource:RESOURCE_ENERGY,from:"5afb1b8ab3e64025b23eedfb",to:"5af6fda89f8ba0792ba7cc19"}; //top room -> storage
 var haulTask2 = {name:"task2",type:"haul",resource:RESOURCE_ENERGY,from:"5af6de994504820382dd6426",to:"5af6fda89f8ba0792ba7cc19"};
 var haulTask3 = {name:"task3",type:"haul",resource:RESOURCE_ENERGY,from:"5af5c51be3494c6b2c9bdcaa",to:"5af6fda89f8ba0792ba7cc19"};
 var haulTask4 = {name:"task4",type:"haul",resource:RESOURCE_ENERGY,from:"5af6fda89f8ba0792ba7cc19",to:"5af762cf8c13c16cef3e01fd"};
+var haulTask5 = {name:"task5",type:"haul",resource:RESOURCE_ENERGY,from:"5afb1f32f8b8e96b36c5f83f",to:"5af6fda89f8ba0792ba7cc19"}; //top room -> storage
 
 //Game.spawns["Spawn1"].spawnCreep([MOVE,MOVE,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,CARRY,CARRY,CARRY,CARRY],"haulerManual",{memory:{role:"hauler",task:{name:"task4",type:"haul",resource:RESOURCE_ENERGY,from:"5af6fda89f8ba0792ba7cc19",to:"5af762cf8c13c16cef3e01fd"}}});
 

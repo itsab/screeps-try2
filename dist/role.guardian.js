@@ -25,6 +25,7 @@ var roleGuardian = {
                     creep.moveTo(target,{visualizePathStyle: {stroke: '#ffffff'}});
                 }
             }
+            creep.moveTo(creep.room.controller);
         }
 
 
