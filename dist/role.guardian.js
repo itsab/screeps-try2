@@ -15,14 +15,14 @@ var roleGuardian = {
             var target = creep.pos.findClosestByPath(targets);
             if(target) {
                 if(creep.attack(target) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(target);
+                    creep.moveTo(target,{visualizePathStyle: {stroke: '#ffffff'});
                 }
             }
 
             var target = creep.pos.findClosestByPath(FIND_HOSTILE_STRUCTURES);
             if(target) {
                 if(creep.attack(target) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(target);
+                    creep.moveTo(target,{visualizePathStyle: {stroke: '#ffffff'});
                 }
             }
         }
