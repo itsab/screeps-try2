@@ -107,7 +107,7 @@ var spawner = {
 
                 //combine new creep body
                 var basicBody = spawnerObj.creepsT[key].body;
-                var extendedBody = extendBody(basicBody);
+                var extendedBody = extendBody(basicBody, creepsT[key].maxModifier);
 
                 //console.log(key + ": trying to spawn - extendedBody: " + extendedBody +" - "+bodyCost(extendedBody));
 
