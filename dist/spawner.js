@@ -7,6 +7,10 @@ var spawner = {
             var baseCapacity = currentBodyCost;
             var availableEnergy = Game.spawns.Spawn1.room.energyCapacityAvailable;
             var k = parseInt(availableEnergy / baseCapacity);
+            if(k > maxModifier)
+            {
+                k = maxModifier;
+            }
 
             for(var i = 0; i<k; i++)
             {
