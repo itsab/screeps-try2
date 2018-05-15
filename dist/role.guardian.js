@@ -16,7 +16,7 @@ var roleGuardian = {
             creep.memory.lastKnownEnemy =  target;
             if(creep.memory.lastKnownEnemy)
             {
-                if(creep.moveTo(creep.memory.lastKnownEnemy,{visualizePathStyle: {stroke: '#ffffff'}}) == ERR_NO_PATH) {
+                if(creep.moveTo(creep.memory.lastKnownEnemy.pos,{visualizePathStyle: {stroke: '#ffffff'}}) == ERR_NO_PATH) {
                     delete creep.memory.lastKnownEnemy;
                 }
             }
