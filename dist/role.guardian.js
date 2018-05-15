@@ -2,7 +2,7 @@ var roleGuardian = {
     run: function(creep) {
 
         var roomName = creep.memory.roomName;
-        if(creep.pos.roomName != roomName)
+        if(roomName != undefined && creep.pos.roomName != roomName)
         {
             const route = Game.map.findRoute(creep.room, roomName);
             if(route.length > 0) {

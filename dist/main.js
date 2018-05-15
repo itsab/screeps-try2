@@ -35,7 +35,7 @@ Memory.rooms = {
 
 var haulTask1 = {name:"task1",type:"haul",resource:RESOURCE_ENERGY,from:"5afb1b8ab3e64025b23eedfb",to:"5af6fda89f8ba0792ba7cc19"}; //top room -> storage
 var haulTask2 = {name:"task2",type:"haul",resource:RESOURCE_ENERGY,from:"5af9fcd95a3dc50ab931abe3",to:"5af6fda89f8ba0792ba7cc19"};
-var haulTask3 = {name:"task3",type:"haul",resource:RESOURCE_ENERGY,from:"5af5c51be3494c6b2c9bdcaa",to:"5af6fda89f8ba0792ba7cc19"};
+var haulTask3 = {name:"task3",type:"haul",resource:RESOURCE_ENERGY,from:"5af9f49795f0fd2d0929dbd9",to:"5af6fda89f8ba0792ba7cc19"};
 var haulTask4 = {name:"task4",type:"haul",resource:RESOURCE_ENERGY,from:"5af6fda89f8ba0792ba7cc19",to:"5af762cf8c13c16cef3e01fd"};
 var haulTask5 = {name:"task5",type:"haul",resource:RESOURCE_ENERGY,from:"5afb2ec94430756b38a4c7cb",to:"5af6fda89f8ba0792ba7cc19"}; //top room -> storage
 
