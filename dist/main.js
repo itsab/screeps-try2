@@ -8,17 +8,18 @@ var spawner = require('spawner');
 var claimer = require('role.claimer');
 var hauler = require('role.hauler');
 var common = require('common');
+var gamestate = require('gamestate');
 
 Memory.spawner =   {
     toSpawn:false,
 	creepsT: {
-        harvester: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 2, priority:10 },
-        driller: { body:[MOVE,MOVE,WORK,WORK], buildCount: 3, priority:8 },
-        builder: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 3, priority:2 },
-        hauler: { body:[MOVE,MOVE,CARRY,CARRY,CARRY,CARRY], buildCount: 0, priority:6 },
-        upgrader: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 3, priority:2 },
-        guardian: { body:[MOVE,MOVE,ATTACK,ATTACK], buildCount: 1, priority:4 },
-		claimer: { body:[MOVE,CLAIM], buildCount: 1, priority:1 }
+        harvester: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 2, priority:10, maxModifier:3 },
+        driller: { body:[MOVE,MOVE,WORK,WORK], buildCount: 3, priority:8, maxModifier:2 },
+        builder: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 3, priority:3, maxModifier:3 },
+        hauler: { body:[MOVE,MOVE,CARRY,CARRY,CARRY,CARRY], buildCount: 0, priority:6, maxModifier:3 },
+        upgrader: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 3, priority:2, maxModifier:3 },
+        guardian: { body:[MOVE,MOVE,ATTACK,ATTACK], buildCount: 1, priority:4, maxModifier:2 },
+		claimer: { body:[MOVE,CLAIM], buildCount: 1, priority:1, maxModifier:2 }
     },
     //spawnQueue: []
 };

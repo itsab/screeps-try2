@@ -1,7 +1,7 @@
 var spawner = {
     run: function(){
         //private functions
-        var extendBody = function(currentBody) {
+        var extendBody = function(currentBody, maxModifier) {
             var extendedBody = [];
             var currentBodyCost = bodyCost(currentBody);
             var baseCapacity = currentBodyCost;
@@ -69,7 +69,7 @@ var spawner = {
 
             var newName = role + Game.time;
             var basicBody = spawnerObj.creepsT[role].body;
-            var extendedBody = extendBody(basicBody);
+            var extendedBody = extendBody(basicBody,spawnerObj.creepsT[role].maxModifier);
 
             //respawn dead creep from spawnQueue
             if(Game.spawns['Spawn1'].spawnCreep(extendedBody, newName,{memory: memory}) == OK){
