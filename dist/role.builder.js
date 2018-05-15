@@ -44,6 +44,9 @@ var roleBuilder = {
                     var repairTarget = creep.pos.findClosestByPath(FIND_STRUCTURES, {
                         filter: (structure) => { var calc = structure.hits / structure.hitsMax; return calc < 0.9; }
                     });
+                    if(creep.repair(repairTarget) == ERR_NOT_IN_RANGE) {
+                        creep.moveTo(repairTarget,{visualizePathStyle: {stroke: '#ffffff'}});
+                    }
                 }
 
             }
