@@ -16,7 +16,7 @@ Memory.spawner =   {
         harvester: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 2, priority:10, maxModifier:2 },
         driller: { body:[MOVE,MOVE,WORK,WORK], buildCount: 4, priority:8, maxModifier:2 },
         builder: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 3, priority:3, maxModifier:3 },
-        hauler: { body:[MOVE,MOVE,CARRY,CARRY,CARRY,CARRY], buildCount: 2, priority:6, maxModifier:4 },
+        hauler: { body:[MOVE,MOVE,CARRY,CARRY,CARRY,CARRY], buildCount: 3, priority:6, maxModifier:4 },
         upgrader: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 3, priority:2, maxModifier:3 },
         guard: { body:[MOVE,MOVE,ATTACK,ATTACK], buildCount: 1, priority:4, maxModifier:2 },
 		claimer: { body:[MOVE,CLAIM], buildCount: 2, priority:1, maxModifier:2 }
@@ -34,7 +34,7 @@ Memory.rooms = {
 };
 
 var haulTask1 = {name:"task1",type:"haul",resource:RESOURCE_ENERGY,from:"5afb1b8ab3e64025b23eedfb",to:"5af6fda89f8ba0792ba7cc19"}; //top room -> storage
-var haulTask2 = {name:"task2",type:"haul",resource:RESOURCE_ENERGY,from:"5af6de994504820382dd6426",to:"5af6fda89f8ba0792ba7cc19"};
+var haulTask2 = {name:"task2",type:"haul",resource:RESOURCE_ENERGY,from:"5af9fcd95a3dc50ab931abe3",to:"5af6fda89f8ba0792ba7cc19"};
 var haulTask3 = {name:"task3",type:"haul",resource:RESOURCE_ENERGY,from:"5af5c51be3494c6b2c9bdcaa",to:"5af6fda89f8ba0792ba7cc19"};
 var haulTask4 = {name:"task4",type:"haul",resource:RESOURCE_ENERGY,from:"5af6fda89f8ba0792ba7cc19",to:"5af762cf8c13c16cef3e01fd"};
 var haulTask5 = {name:"task5",type:"haul",resource:RESOURCE_ENERGY,from:"5afb2ec94430756b38a4c7cb",to:"5af6fda89f8ba0792ba7cc19"}; //top room -> storage
