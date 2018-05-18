@@ -60,7 +60,7 @@ module.exports.loop = function () {
 
 
     //current creep count
-    if(Game.creeps.length == 0)
+    if(_.isEmpty(Game.creeps))
     {
         spawner.emergencyRecovery();
     }
