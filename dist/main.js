@@ -46,7 +46,7 @@ Memory.containers = ["5af4a6b43d614859f1ed8175"];
 
 module.exports.loop = function () {
 
-    common.log("test123");
+    //common.log("test123");
 
 	//check if main-room is under attack (enemy inside longer than 10 ticks)
 	if(Game.spawns.Spawn1.room.find(FIND_HOSTILE_CREEPS).length > 0)
