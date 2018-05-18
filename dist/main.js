@@ -59,6 +59,11 @@ module.exports.loop = function () {
 	}
 
 
+    //current creep count
+    if(Game.creeps.length == 0)
+    {
+        spawner.emergencyRecovery();
+    }
 
     //use creeps
 	var countUpgrader = 0;

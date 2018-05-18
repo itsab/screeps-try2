@@ -39,6 +39,7 @@ var spawner = {
             }, 0);
         }
 
+
         //start
         var spawnerObj = Memory.spawner;
         var creepsT = spawnerObj.creepsT;
@@ -124,6 +125,19 @@ var spawner = {
         }
 
         Memory.spawner = spawnerObj;
+    },
+
+    //spawn emergency harvester
+    emergencyRecovery: function (){
+        var creeps = Game.creeps;
+        if(creeps.length == 0) {
+            var emergencyRole = "harvester";
+            var newName = role + Game.time;
+            var basicBody = spawnerObj.creepsT[emergencyRole].body;
+            console.log("emergencyRecovery: spawning emergency harvester creep - "+ newName);
+
+            Game.spawns.Spawn1.spawnCreep(basicBody,newName,role:emergencyRole);
+        }
     },
 
     //add dead creeps back to spawn queue
