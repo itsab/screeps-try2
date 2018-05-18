@@ -132,7 +132,7 @@ var spawner = {
         var creeps = Game.creeps;
         if(_.isEmpty(creeps)) {
             var emergencyRole = "harvester";
-            var newName = role + Game.time;
+            var newName = emergencyRole + Game.time;
             var basicBody = spawnerObj.creepsT[emergencyRole].body;
             console.log("emergencyRecovery: spawning emergency harvester creep - "+ newName);
 
