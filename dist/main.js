@@ -14,12 +14,12 @@ Memory.spawner =   {
     toSpawn:false,
 	creepsT: {
         harvester: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 1, priority:10, maxModifier:2 },
-        driller: { body:[MOVE,MOVE,WORK,WORK], buildCount: 4, priority:8, maxModifier:2 },
+        driller: { body:[MOVE,MOVE,WORK,WORK], buildCount: 2, priority:8, maxModifier:2 },
         builder: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 2, priority:3, maxModifier:3 },
-        hauler: { body:[MOVE,MOVE,CARRY,CARRY,CARRY,CARRY], buildCount: 5, priority:6, maxModifier:4 },
-        upgrader: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 3, priority:2, maxModifier:3 },
-        guard: { body:[MOVE,MOVE,ATTACK,ATTACK], buildCount: 2, priority:4, maxModifier:2 },
-		claimer: { body:[MOVE,CLAIM], buildCount: 2, priority:1, maxModifier:2 }
+        hauler: { body:[MOVE,MOVE,CARRY,CARRY,CARRY,CARRY], buildCount: 2,5, priority:6, maxModifier:4 },
+        upgrader: { body:[MOVE,MOVE,CARRY,CARRY,WORK], buildCount: 2, priority:2, maxModifier:3 },
+        guard: { body:[MOVE,MOVE,ATTACK,ATTACK], buildCount: 1, priority:4, maxModifier:2 },
+		claimer: { body:[MOVE,CLAIM], buildCount: 0, priority:1, maxModifier:2 }
     },
     //spawnQueue: []
 };
