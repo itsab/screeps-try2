@@ -136,7 +136,7 @@ var spawner = {
             var basicBody = spawnerObj.creepsT[emergencyRole].body;
             console.log("emergencyRecovery: spawning emergency harvester creep - "+ newName);
 
-            Game.spawns.Spawn1.spawnCreep(basicBody,newName,role:emergencyRole);
+            Game.spawns.Spawn1.spawnCreep(basicBody,newName,{memory:{role:emergencyRole}});
         }
     },
 
