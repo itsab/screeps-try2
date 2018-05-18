@@ -103,7 +103,7 @@ var common = {
     },
 
     log: function(logText) {
-        console.log("<h1>h1test: "+logText+"</h1><h2>arguments.callee.caller.name</h2>");
+        console.log("<span style='color:blue'>h1test: "+logText+"</span>"+arguments.callee.caller.name);
     }
 
 }
