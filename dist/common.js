@@ -104,7 +104,7 @@ var common = {
 
     log: function(logText) {
         console.log("<span style='color:blue'>h1test: "+logText+"</span>");
-        console.log();
+        console.log(log.caller);
     }
 
 }
