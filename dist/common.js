@@ -48,7 +48,7 @@ var common = {
 
                 //sort energyContainers by amount / (range/3)
                 energyContainers.sort(sortContainers);
-                console.log("DEBUG containers: "+energyContainers);
+                //console.log("DEBUG containers: "+energyContainers);
                 var energyContainer = energyContainers[0];
 
                 //get energy from chosen container
