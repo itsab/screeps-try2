@@ -3,7 +3,7 @@ var link = {
 
         var links = Memory.gamestate.links;
         var output = _.filter(links,  {direction:"output"});
-        console.log("output: "+output);
+        console.log("output: "+JSON.stringify(output));
 
         for(var key in links)
         {
