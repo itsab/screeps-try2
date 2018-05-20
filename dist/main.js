@@ -25,7 +25,7 @@ Memory.spawner =   {
     //spawnQueue: []
 };
 
-if(Memory.spawner.spawnQueue == undefined){
+if(Memory.spawner.spawnQueue == undefined || Memory.spawner.spawnQueue == null){
     Memory.spawner.spawnQueue = [];
 }
 

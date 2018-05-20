@@ -19,7 +19,7 @@ var gamestate = {
 		}
 
 		//initialize empty gamestate object
-		if(_.isNil(Memory.gamestate))
+		if(Memory.gamestate == undefined)
 		{
 			Memory.gamestate = gamestate;
 		}
@@ -34,7 +34,7 @@ var gamestate = {
 	addRoom: function(roomName, roomType) {
     	var gamestate = Memory.gamestate;
 
-		if(_.isNil(gamestate.rooms[roomName]))
+		if(gamestate.rooms[roomName] == undefined)
 		{
             gamestate.rooms[roomName] = {roomType: roomType, sources:[]};
 		}
@@ -53,7 +53,7 @@ var gamestate = {
     addLink: function(linkId, direction) {
         var gamestate = Memory.gamestate;
 
-        if(_.isNil(gamestate.links[linkId]))
+        if(gamestate.links[linkId] == undefined)
         {
             gamestate.links[linkId] = {direction: direction};
         }
