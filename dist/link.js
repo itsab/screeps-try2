@@ -2,8 +2,8 @@ var link = {
     run: function() {
 
         var links = Memory.gamestate.links;
-        var output = _.filter(links,  {direction:"output"}).id;
-        console.log("output: "+JSON.stringify(output));
+        var output = _.filter(links,  {direction:"output"});
+        console.log("output: "+JSON.stringify(output.id));
 
         for(var key in links)
         {
