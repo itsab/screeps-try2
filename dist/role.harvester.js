@@ -12,15 +12,19 @@ var roleHarvester = {
             var storage = Game.getObjectById(key);
         }
         if(output.energy > 0) {
-            var ret = creep.withdraw(output,RESOURCE_ENERGY);
-
-            if (ret == ERR_FULL) {
+            if(creep.carry.energy == creep.carryCapacity)
+            {
                 if(creep.transfer(storage,RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(storage);
                 }
-            } else if(ret == ERR_NOT_IN_RANGE) {
-                creep.moveTo(output);
+            } else {
+                var ret = creep.withdraw(output,RESOURCE_ENERGY);
+                if(ret == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(output);
+                }
             }
+
+
 
         }
 
