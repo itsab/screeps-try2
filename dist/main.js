@@ -51,9 +51,13 @@ module.exports.loop = function () {
     gamestate.initialize();
     gamestate.addRoom("E43S27", "main");
     gamestate.addLink("5b002c931dd8e17113f51f5b", "output");
+    gamestate.addLink("5b00461930133270e9f34481", "input");
+    gamestate.addContainer("5b018476ad1a1e78d5076dd9","output");
+    gamestate.addContainer("5af9fcd95a3dc50ab931abe3","input");
+    gamestate.addContainer("5af9f49795f0fd2d0929dbd9","input");
 
 
-	//check if main-room is under attack (enemy inside longer than 10 ticks)
+    //check if main-room is under attack (enemy inside longer than 10 ticks)
 	if(Game.spawns.Spawn1.room.find(FIND_HOSTILE_CREEPS).length > 0)
 	{
 		Memory.underAttack++;

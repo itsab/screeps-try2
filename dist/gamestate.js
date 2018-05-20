@@ -60,6 +60,17 @@ var gamestate = {
 
         Memory.gamestate = gamestate;
     },
+
+    addContainer: function(containerId, containerType) {
+        var gamestate = Memory.gamestate;
+
+        if(gamestate.containers[containerId] == undefined)
+        {
+            gamestate.containers[containerId] = {direction: containerType};
+        }
+
+        Memory.gamestate = gamestate;
+    },
 }
 
 module.exports = gamestate;
