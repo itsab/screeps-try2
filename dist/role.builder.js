@@ -27,13 +27,17 @@ var roleBuilder = {
                 //prioritize repairing low buildings
                 var repairTargets = creep.room.find(FIND_STRUCTURES, {
                     filter: (structure) => {
+                        var ret;
                         var calc = structure.hits / structure.hitsMax;
-                        if((structure.structureType == STRUCTURE_RAMPART || structure.structureType == STRUCTURE_WALL) && structure.hits < 150000) {
-                            return true;
+                        if(structure.structureType != STRUCTURE_WALL && structure.structureType != STRUCTURE_RAMPART)
+                        {
+                            ret = calc < 0.7
+                            console.log("0.7");
                         } else {
-                            return calc < 0.5;
+                            console.log("0.0001");
+                            ret = calc < 0.001;
                         }
-                        }
+                        return ret;}
 
                 });
                 var target = creep.pos.findClosestByPath(FIND_MY_CONSTRUCTION_SITES);
@@ -50,7 +54,11 @@ var roleBuilder = {
                     }
                 } else { //repair the rest
                     var repairTarget = creep.pos.findClosestByPath(FIND_STRUCTURES, {
-                        filter: (structure) => { var calc = structure.hits / structure.hitsMax; return calc < 0.9; }
+                        filter: (structure) => {
+                            var calc = structure.hits / structure.hitsMax;
+                            if(structure.structureType == STRUCTURE_WALL || structure.structureType == STRUCTURE_RAMPART)
+                                return false;
+                            return calc < 0.9; }
                     });
                     if(creep.repair(repairTarget) == ERR_NOT_IN_RANGE) {
                         creep.moveTo(repairTarget,{visualizePathStyle: {stroke: '#ffffff'}});
