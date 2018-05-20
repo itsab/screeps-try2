@@ -38,6 +38,24 @@ var roleHarvester = {
             if(creep.harvest(nearSource) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(nearSource, {visualizePathStyle: {stroke: '#ffaa00'}});
             }*/
+            var links = Memory.gamestate.links;
+            var storages = Memory.gamestate.storages;
+            var output = Game.getObjectById(_.filter(links,  {direction:"output"})[0].id);
+            for(var key in storages)
+            {
+                var storage = storages[key];
+            }
+            if(link.energy > 0 && creep.carry.energy < creep.carryCapacity) {
+                var ret = creep.withdraw(link,RESOURCE_ENERGY);
+                if(ret == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(link);
+                } else if (ret == ERR_FULL) {
+                    if(creep.transfer(storage,RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                        creep.moveTo(storage);
+                    }
+                }
+            }
+
             common.getEnergy(creep);
         }
     }

@@ -15,6 +15,9 @@ var gamestate = {
 			},
 			links:{
                 //"5b002c931dd8e17113f51f5b":{direction:"input"},
+			},
+			storages: {
+
 			}
 		}
 
@@ -32,6 +35,9 @@ var gamestate = {
         }else if(Memory.gamestate.containers == undefined)
         {
             Memory.gamestate.containers = {}
+        }else if(Memory.gamestate.storages == undefined)
+        {
+            Memory.gamestate.storages = {}
         }
 
 
@@ -78,6 +84,16 @@ var gamestate = {
         if(gamestate.containers[containerId] == undefined)
         {
             gamestate.containers[containerId] = {direction: containerType, id: containerId};
+        }
+
+        Memory.gamestate = gamestate;
+    },
+    addStorage: function(storageId) {
+        var gamestate = Memory.gamestate;
+
+        if(gamestate.storages[storageId] == undefined)
+        {
+            gamestate.storages[storageId] = {id: storageId};
         }
 
         Memory.gamestate = gamestate;

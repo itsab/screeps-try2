@@ -40,7 +40,7 @@ var haulTask2 = {name:"task2",type:"haul",resource:RESOURCE_ENERGY,from:"5af9fcd
 var haulTask3 = {name:"task3",type:"haul",resource:RESOURCE_ENERGY,from:"5af9f49795f0fd2d0929dbd9",to:"5af6fda89f8ba0792ba7cc19"};
 var haulTask4 = {name:"task4",type:"haul",resource:RESOURCE_ENERGY,from:"5af6fda89f8ba0792ba7cc19",to:"5af762cf8c13c16cef3e01fd"};
 var haulTask5 = {name:"task5",type:"haul",resource:RESOURCE_ENERGY,from:"5afb2ec94430756b38a4c7cb",to:"5af6fda89f8ba0792ba7cc19"}; //top room -> storage
-
+var haulTask6 = {name:"task6",type:"haul",resource:RESOURCE_ENERGY,from:"5af6fda89f8ba0792ba7cc19",to:"5b018476ad1a1e78d5076dd9"}; //storage -> upgrade
 //Game.spawns["Spawn1"].spawnCreep([MOVE,MOVE,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,CARRY,CARRY,CARRY,CARRY,MOVE,MOVE,CARRY,CARRY,CARRY,CARRY],"haulerManual",{memory:{role:"hauler",task:{name:"task4",type:"haul",resource:RESOURCE_ENERGY,from:"5af6fda89f8ba0792ba7cc19",to:"5af762cf8c13c16cef3e01fd"}}});
 
 
@@ -56,6 +56,7 @@ module.exports.loop = function () {
     gamestate.addContainer("5b018476ad1a1e78d5076dd9","output");
     gamestate.addContainer("5af9fcd95a3dc50ab931abe3","input");
     gamestate.addContainer("5af9f49795f0fd2d0929dbd9","input");
+    gamestate.addStorage("5af6fda89f8ba0792ba7cc19");
 
 
     //check if main-room is under attack (enemy inside longer than 10 ticks)
