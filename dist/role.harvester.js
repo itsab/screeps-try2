@@ -15,7 +15,7 @@ var roleHarvester = {
 
             creep.memory.task = {name:"link_storage", type:"haul",resource:RESOURCE_ENERGY,from:output.id,to:storage.id};
             common.runTask(creep, creep.memory.task);
-
+            return;
 
         } else {
             delete creep.memory.task;
