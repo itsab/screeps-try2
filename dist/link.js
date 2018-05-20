@@ -11,7 +11,7 @@ var link = {
             var link = Game.getObjectById(key);
 
             //transfer energy when the link is full and has no cooldown and is input
-            if(link.energy == link.energyCapacity && link.cooldown == 0 && direction == "input")
+            if(link.energy == link.energyCapacity && link.cooldown == 0 && direction == "input" && output.energy < output.energyCapacity)
             {
                 link.transferEnergy(output);
 
