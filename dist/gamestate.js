@@ -36,7 +36,7 @@ var gamestate = {
 
 		if(gamestate.rooms[roomName] == undefined)
 		{
-            gamestate.rooms[roomName] = {roomType: roomType, sources:[]};
+            gamestate.rooms[roomName] = {roomType: roomType, sources:[], id:roomName};
 		}
 
 
@@ -55,7 +55,7 @@ var gamestate = {
 
         if(gamestate.links[linkId] == undefined)
         {
-            gamestate.links[linkId] = {direction: direction};
+            gamestate.links[linkId] = {direction: direction, id: linkId};
         }
 
         Memory.gamestate = gamestate;
@@ -66,7 +66,7 @@ var gamestate = {
 
         if(gamestate.containers[containerId] == undefined)
         {
-            gamestate.containers[containerId] = {direction: containerType};
+            gamestate.containers[containerId] = {direction: containerType, id: containerId};
         }
 
         Memory.gamestate = gamestate;
