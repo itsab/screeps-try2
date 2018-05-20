@@ -142,6 +142,9 @@ module.exports.loop = function () {
 	//use towers
 	tower.run();
 
+	//use links
+    link.run();
+
 	//run every10ticks
 	if(Game.time % 10 == 0)
 	{
