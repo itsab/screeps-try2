@@ -4,6 +4,7 @@ var guardian = require('role.guardian');
 var upgrader = require('role.upgrader');
 var driller = require('role.driller');
 var tower = require('tower');
+var link = require('link');
 var spawner = require('spawner');
 var claimer = require('role.claimer');
 var hauler = require('role.hauler');
