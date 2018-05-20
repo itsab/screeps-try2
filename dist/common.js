@@ -26,8 +26,8 @@ var common = {
 
         var sortContainers = function(a, b)
         {
-            var ar = a.store[RESOURCE_ENERGY] / (creep.pos.getRangeTo(a) / 5);
-            var br = b.store[RESOURCE_ENERGY] / (creep.pos.getRangeTo(b) / 5);
+            var ar = (a.store[RESOURCE_ENERGY] / a.storeCapacity) / (creep.pos.getRangeTo(a) / 5);
+            var br = (b.store[RESOURCE_ENERGY] / b.storeCapacity) / (creep.pos.getRangeTo(b) / 5);
 
             if(ar == br)
                 return 0;
