@@ -9,7 +9,7 @@ var roleHarvester = {
         var output = Game.getObjectById(_.filter(links,  {direction:"output"})[0].id);
         for(var key in storages)
         {
-            var storage = storages[key];
+            var storage = Game.getObjectById(key);
         }
         if(output.energy > 0) {
             var ret = creep.withdraw(output,RESOURCE_ENERGY);
