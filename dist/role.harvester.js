@@ -11,7 +11,7 @@ var roleHarvester = {
         {
             var storage = storages[key];
         }
-        if(output.energy > 0 && creep.carry.energy < creep.carryCapacity) {
+        if(output.energy > 0) {
             var ret = creep.withdraw(output,RESOURCE_ENERGY);
             if(ret == ERR_NOT_IN_RANGE) {
                 creep.moveTo(output);
