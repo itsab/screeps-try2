@@ -11,10 +11,10 @@ var roleHarvester = {
         {
             var storage = storages[key];
         }
-        if(link.energy > 0 && creep.carry.energy < creep.carryCapacity) {
-            var ret = creep.withdraw(link,RESOURCE_ENERGY);
+        if(output.energy > 0 && creep.carry.energy < creep.carryCapacity) {
+            var ret = creep.withdraw(output,RESOURCE_ENERGY);
             if(ret == ERR_NOT_IN_RANGE) {
-                creep.moveTo(link);
+                creep.moveTo(output);
             } else if (ret == ERR_FULL) {
                 if(creep.transfer(storage,RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(storage);
