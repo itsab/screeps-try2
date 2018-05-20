@@ -21,6 +21,7 @@ var gamestate = {
 		//initialize empty gamestate object
 		if(Memory.gamestate == undefined)
 		{
+			console.log("initializing gamestate");
 			Memory.gamestate = gamestate;
 		}
 
