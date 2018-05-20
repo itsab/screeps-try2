@@ -27,6 +27,7 @@ var tower = {
                         {
                             ret = calc < 0.7
                         } else {
+                            console.log("0.0001");
                             ret = calc < 0.001;
                         }
                         return ret;}
