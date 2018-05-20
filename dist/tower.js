@@ -26,9 +26,9 @@ var tower = {
                         if(structure.structureType != STRUCTURE_WALL && structure.structureType != STRUCTURE_RAMPART)
                         {
                             ret = calc < 0.7
-                            console.log("0.7");
+                            //console.log("0.7");
                         } else {
-                            console.log("0.0001");
+                            //console.log("0.0001");
                             ret = calc < 0.001;
                         }
                         return ret;}
