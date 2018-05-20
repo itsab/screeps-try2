@@ -14,6 +14,13 @@ var roleDriller = {
             }
         } else {
 
+            //tranfser energy to link in range
+            var link = creep.pos.findClosestByRange(FIND_STRUCTURES, {filter: {structureType: STRUCTURE_LINK}})
+            if(creep.carry.energy > 0 && link != undefined && creep.pos.getRangeTo(link) < 2)
+            {
+                creep.transfer(link, RESOURCE_ENERGY);
+            }
+
             //check if standing on container -> mine
             var structures = creep.pos.lookFor(LOOK_STRUCTURES);
             if(structures.length > 0 && structures[0].structureType == STRUCTURE_CONTAINER)
