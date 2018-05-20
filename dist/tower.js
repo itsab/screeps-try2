@@ -20,7 +20,16 @@ var tower = {
             if(tower.energy / tower.energyCapacity > 0.5)
             {
                 var repairTargets = tower.room.find(FIND_STRUCTURES, {
-                    filter: (structure) => { var calc = structure.hits / structure.hitsMax; return calc < 0.7; }
+                    filter: (structure) => {
+                        var ret;
+                        var calc = structure.hits / structure.hitsMax;
+                        if(structure.type != STRUCTURE_WALL && structure.type != STRUCTURE_RAMPART)
+                        {
+                            ret = calc < 0.7
+                        } else {
+                            ret = calc < 0.001;
+                        }
+                        return ret;}
                 });
 
                 if(repairTargets.length > 0) {
