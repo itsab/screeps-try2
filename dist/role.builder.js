@@ -35,7 +35,7 @@ var roleBuilder = {
                             //console.log("0.7");
                         } else {
                             //console.log("0.0001");
-                            return structure.hits > 150000;
+                            return structure.hits < 150000;
                         }
                         return ret;}
 
