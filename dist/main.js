@@ -9,6 +9,7 @@ var claimer = require('role.claimer');
 var hauler = require('role.hauler');
 var common = require('common');
 var gamestate = require('gamestate');
+var _ = require('lodash');
 
 Memory.spawner =   {
     toSpawn:false,
