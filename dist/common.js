@@ -45,9 +45,10 @@ var common = {
             });
             if (energyContainers.length > 0)  //get energy from containers
             {
-                console.log("DEBUG containers: "+energyContainers);
+
                 //sort energyContainers by amount / (range/3)
                 energyContainers.sort(sortContainers);
+                console.log("DEBUG containers: "+energyContainers);
                 var energyContainer = energyContainers[0];
 
                 //get energy from chosen container
