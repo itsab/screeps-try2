@@ -28,7 +28,7 @@ var roleBuilder = {
                 var repairTargets = creep.room.find(FIND_STRUCTURES, {
                     filter: (structure) => {
                         var calc = structure.hits / structure.hitsMax;
-                        if((structure.type == STRUCTURE_RAMPART || structure.type == STRUCTURE_WALL) && structure.hits < 150000) {
+                        if((structure.structureType == STRUCTURE_RAMPART || structure.structureType == STRUCTURE_WALL) && structure.hits < 150000) {
                             return true;
                         } else {
                             return calc < 0.5;

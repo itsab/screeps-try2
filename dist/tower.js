@@ -23,7 +23,7 @@ var tower = {
                     filter: (structure) => {
                         var ret;
                         var calc = structure.hits / structure.hitsMax;
-                        if(structure.type != STRUCTURE_WALL && structure.type != STRUCTURE_RAMPART)
+                        if(structure.structureType != STRUCTURE_WALL && structure.structureType != STRUCTURE_RAMPART)
                         {
                             ret = calc < 0.7
                             console.log("0.7");
