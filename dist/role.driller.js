@@ -71,7 +71,7 @@ var roleDriller = {
                 if( ret == ERR_NOT_IN_RANGE) {
                     creep.moveTo(source, {visualizePathStyle: {stroke: '#ffffff'}});
                 } else if (ret == ERR_NOT_ENOUGH_RESOURCES) {
-                    var cont = creep.pos.findClosestByRange(FIND_STRUCTURES,{filter:{structureType:STRUCTURE_CONTAINER}})
+                    var cont = creep.pos.findClosestByRange(FIND_STRUCTURES,{filter:{structureType:STRUCTURE_CONTAINER}});
                     creep.transfer(cont, RESOURCE_ENERGY);
                 }
             }
