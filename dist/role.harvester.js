@@ -12,20 +12,13 @@ var roleHarvester = {
             var storage = Game.getObjectById(key);
         }
         if(output.energy > 0) {
-            if(creep.carry.energy == creep.carryCapacity)
-            {
-                if(creep.transfer(storage,RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(storage);
-                }
-            } else {
-                var ret = creep.withdraw(output,RESOURCE_ENERGY);
-                if(ret == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(output);
-                }
-            }
+
+            creep.memory.task = {name:"link_storage", type:"haul",resource:RESOURCE_ENERGY,from:output.id,to:storage.id};
+            common.runTask(creep, creep.memory.task);
 
 
-
+        } else {
+            delete creep.memory.task;
         }
 
         if(creep.memory.harvesting && creep.carry.energy == 0) {
