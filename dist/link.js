@@ -2,7 +2,7 @@ var link = {
     run: function() {
 
         var links = Memory.gamestate.links;
-        var output = _.filter(links,  {direction:"output"});
+        var output = Game.getObjectById(_.filter(links,  {direction:"output"})[0].id);
         console.log("output: "+JSON.stringify(output.id));
 
         for(var key in links)
