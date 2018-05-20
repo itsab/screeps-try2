@@ -13,13 +13,15 @@ var roleHarvester = {
         }
         if(output.energy > 0) {
             var ret = creep.withdraw(output,RESOURCE_ENERGY);
-            if(ret == ERR_NOT_IN_RANGE) {
-                creep.moveTo(output);
-            } else if (ret == ERR_FULL) {
+
+            if (ret == ERR_FULL) {
                 if(creep.transfer(storage,RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(storage);
                 }
+            } else if(ret == ERR_NOT_IN_RANGE) {
+                creep.moveTo(output);
             }
+
         }
 
         if(creep.memory.harvesting && creep.carry.energy == 0) {
