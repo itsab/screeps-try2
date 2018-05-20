@@ -23,7 +23,17 @@ var gamestate = {
 		{
 			console.log("initializing gamestate");
 			Memory.gamestate = gamestate;
-		}
+		} else if(Memory.gamestate.links == undefined)
+		{
+			Memory.gamestate.links = {}
+		} else if(Memory.gamestate.rooms == undefined)
+        {
+            Memory.gamestate.rooms = {}
+        }else if(Memory.gamestate.containers == undefined)
+        {
+            Memory.gamestate.containers = {}
+        }
+
 
 		//initialize rooms
 
