@@ -119,7 +119,7 @@ var common = {
 
     log: function(logText) {
         console.log("<span style='color:#ff938e'>h1test: "+logText+"</span>");
-        console.log(this.log.caller);
+        console.log(this.log.caller.name);
     }
 
 }
