@@ -67,8 +67,10 @@ var common = {
     },
 
     getEnergyFromOutput: function(creep, range) {
-        var outputs = Memory.gamestate.containers.map(Game.getObjectById);
-        var output = creep.pos.findInRange(outputs,range,{filter:{direction:"output"}});
+
+        var outputs = Memory.gamestate.containers;
+        var output = Game.getObjectById(_.filter(outputs,  {direction:"output"})[0].id);
+        //var output = creep.pos.findInRange(outputs,range,{filter:{direction:"output"}});
         if(output){
             if (creep.withdraw(output, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(output);
