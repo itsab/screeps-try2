@@ -48,12 +48,15 @@ var gamestate = {
 
 	},
 
-	addRoom: function(roomName, roomType) {
+	addRoom: function(roomName, roomType, roomMain) {
     	var gamestate = Memory.gamestate;
 
 		if(gamestate.rooms[roomName] == undefined)
 		{
             gamestate.rooms[roomName] = {roomType: roomType, sources:[], id:roomName};
+            if(roomType == "secondary" && _.isString(roomType)) {
+                gamestate.rooms[roomName].roomMain = roomMain;
+            }
 		}
 
 

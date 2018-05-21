@@ -31,8 +31,12 @@ if(Memory.spawner.spawnQueue == undefined || Memory.spawner.spawnQueue == null){
 }
 
 Memory.rooms = {
-	"E43S27":{},
-    "E43S26":{}
+	"E43S27":{
+	    creeps: []
+    },
+    "E43S26":{
+	    creeps: []
+    }
 };
 
 var haulTask1 = {name:"task1",type:"haul",resource:RESOURCE_ENERGY,from:"5afb1b8ab3e64025b23eedfb",to:"5af6fda89f8ba0792ba7cc19"}; //top room -> storage
@@ -51,6 +55,7 @@ module.exports.loop = function () {
     //gamestate stuff
     gamestate.initialize();
     gamestate.addRoom("E43S27", "main");
+    gamestate.addRoom("E43S26", "secondary", "E43S27");
     gamestate.addLink("5b002c931dd8e17113f51f5b", "output");
     gamestate.addLink("5b00461930133270e9f34481", "input");
     gamestate.addContainer("5b018476ad1a1e78d5076dd9","output");
