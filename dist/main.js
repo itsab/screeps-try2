@@ -162,6 +162,7 @@ module.exports.loop = function () {
 
 	//DEBUG AREA
 	//console.log(Game.cpu.bucket);
+    common.log("test");
 
     //visuals
     new RoomVisual('E43S27').text("toSpawn: "+Memory.spawner.toSpawn, Game.spawns.Spawn1.pos, {color: 'green', font: 0.8});
