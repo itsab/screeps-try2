@@ -26,6 +26,7 @@ var roleUpgrader = {
             if(creep.memory.upgrading) {
                 if(creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
                     var path = PathFinder.search(creep.pos, creep.room.controller);
+                    console.log(JSON.stringify(path));
                     creep.moveByPath(path);
                 }
             }
