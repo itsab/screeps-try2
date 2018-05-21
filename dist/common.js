@@ -70,7 +70,7 @@ var common = {
 
         var outputs = Memory.gamestate.containers;
         var output = Game.getObjectById(_.filter(outputs,  {direction:"output"})[0].id);
-        console.log(JSON.stringify(output));
+        //console.log(JSON.stringify(output));
         //var output = creep.pos.findInRange(outputs,range,{filter:{direction:"output"}});
         if(output){
             if (creep.withdraw(output, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
@@ -118,7 +118,7 @@ var common = {
     },
 
     log: function(logText) {
-        console.log("<span style='color:blue'>h1test: "+logText+"</span>");
+        console.log("<span style='color:#ff938e'>h1test: "+logText+"</span>");
         console.log(log.caller);
     }
 
