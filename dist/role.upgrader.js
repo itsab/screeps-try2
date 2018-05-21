@@ -39,6 +39,7 @@ var roleUpgrader = {
                 if(creep.harvest(nearSource) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(nearSource, {visualizePathStyle: {stroke: '#ffaa00'}});
                 }*/
+                common.getEnergyFromOutput(creep, 10);
                 common.getEnergy(creep);
             }
         }

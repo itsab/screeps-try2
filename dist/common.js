@@ -66,6 +66,17 @@ var common = {
         }
     },
 
+    getEnergyFromOutput: function(creep, range) {
+        var outputs = Memory.gamestate.containers.map(Game.getObjectById);
+        var output = creep.pos.findInRange(outputs,range,{filter:{direction:"output"}});
+        if(output){
+            if (creep.withdraw(output, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                creep.moveTo(output);
+            }
+        }
+
+    },
+
     runTask: function (creep, task) {
         switch(task.type) {
             case "haul":
